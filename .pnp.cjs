@@ -7206,8 +7206,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-scripts", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:5.0.0"],\
             ["semantic-ui-css", "https://github.com/Semantic-Org/Semantic-UI-CSS.git#commit=01e4a5346496c284db3b19a102458731ccccd911"],\
             ["semantic-ui-react", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:2.1.2"],\
-            ["semantic-ui-react-spinbutton", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#workspace:packages/lib"],\
-            ["web-vitals", "npm:2.1.4"]\
+            ["semantic-ui-react-spinbutton", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#workspace:packages/lib"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -16266,15 +16265,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["wbuf", "npm:1.7.3"],\
             ["minimalistic-assert", "npm:1.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["web-vitals", [\
-        ["npm:2.1.4", {\
-          "packageLocation": "./.yarn/cache/web-vitals-npm-2.1.4-68bdd9ecb2-03d3f47dbf.zip/node_modules/web-vitals/",\
-          "packageDependencies": [\
-            ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "HARD"\
         }]\
