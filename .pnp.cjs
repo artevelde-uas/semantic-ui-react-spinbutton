@@ -7204,6 +7204,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:17.0.2"],\
             ["react-scripts", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:5.0.0"],\
+            ["semantic-ui-css", "npm:2.4.1"],\
             ["semantic-ui-react", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:2.1.2"],\
             ["semantic-ui-react-spinbutton", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#workspace:packages/lib"],\
             ["web-vitals", "npm:2.1.4"]\
@@ -10509,6 +10510,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.21"],\
             ["merge-stream", "npm:2.0.0"],\
             ["supports-color", "npm:8.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jquery", [\
+        ["npm:3.6.0", {\
+          "packageLocation": "./.yarn/cache/jquery-npm-3.6.0-ca7872bdbb-8fd5fef4aa.zip/node_modules/jquery/",\
+          "packageDependencies": [\
+            ["jquery", "npm:3.6.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14716,6 +14726,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["selfsigned", "npm:2.0.0"],\
             ["node-forge", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["semantic-ui-css", [\
+        ["npm:2.4.1", {\
+          "packageLocation": "./.yarn/cache/semantic-ui-css-npm-2.4.1-488d289b03-6351d9bfbe.zip/node_modules/semantic-ui-css/",\
+          "packageDependencies": [\
+            ["semantic-ui-css", "npm:2.4.1"],\
+            ["jquery", "npm:3.6.0"]\
           ],\
           "linkType": "HARD"\
         }]\

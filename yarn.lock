@@ -4858,6 +4858,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-scripts: 5.0.0
+    semantic-ui-css: ^2.4.1
     semantic-ui-react: ^2.1.2
     semantic-ui-react-spinbutton: "workspace:^"
     web-vitals: ^2.1.4
@@ -7615,6 +7616,13 @@ __metadata:
   bin:
     jest: bin/jest.js
   checksum: 96f1d69042b3c6dfc695f2a4e4b0db38af6fb78582ad1a02beaa57cfcd77cbd31567d7d865c1c85709b7c3e176eefa3b2035ffecd646005f15d8ef528eccf205
+  languageName: node
+  linkType: hard
+
+"jquery@npm:x.*":
+  version: 3.6.0
+  resolution: "jquery@npm:3.6.0"
+  checksum: 8fd5fef4aa48fd374ec716dd1c1df1af407814a228e15c1260ca140de3a697c2a77c30c54ff1d238b6a3ab4ddc445ddeef9adce6c6d28e4869d85eb9d3951c0e
   languageName: node
   linkType: hard
 
@@ -10678,6 +10686,15 @@ __metadata:
   dependencies:
     node-forge: ^1.2.0
   checksum: 43fca39a5aded2a8e97c1756af74c049a9dde12d47d302820f7d507d25c2ad7da4b04bc439a36620d63b4c0149bcf34ae7a729f978bf3b1bf48859c36ae34cee
+  languageName: node
+  linkType: hard
+
+"semantic-ui-css@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "semantic-ui-css@npm:2.4.1"
+  dependencies:
+    jquery: x.*
+  checksum: 6351d9bfbeed667a39b9cde08372865bd04612450103aabff174bc46558ad1ac123157cab2716670019abf5a70f56a77d79d082b4043d8893ed350b9a6fed837
   languageName: node
   linkType: hard
 
