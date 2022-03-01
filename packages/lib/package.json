@@ -27,6 +27,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "scripts": {
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "watch": "rollup --config --watch"
   }
 }
