@@ -7,8 +7,8 @@ import './index.css';
 
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
+    React.createElement(React.StrictMode, {
+        children: React.createElement(App)
+    }),
     document.getElementById('root')
 );
