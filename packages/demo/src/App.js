@@ -1,20 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Header, Item } from 'semantic-ui-react'
 import { Spinbutton } from 'semantic-ui-react-spinbutton';
-
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-          <Spinbutton placeholder='Placeholder' />
-      </header>
-    </div>
+    <Container text>
+      <Header as='h2'>Header</Header>
+      <Item.Group>
+        <Item>
+          <Item.Content>
+            <Item.Header as='a'>Default</Item.Header>
+            <Item.Meta>Spinbutton with default settings</Item.Meta>
+            <Item.Description>
+              <Spinbutton placeholder='Placeholder' />
+            </Item.Description>
+          </Item.Content>
+        </Item>
+      </Item.Group>
+    </Container>
   );
 }
 
