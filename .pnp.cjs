@@ -14487,6 +14487,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rollup-plugin-peer-deps-external", [\
+        ["npm:2.2.4", {\
+          "packageLocation": "./.yarn/cache/rollup-plugin-peer-deps-external-npm-2.2.4-907ae6e3f2-597bc7631f.zip/node_modules/rollup-plugin-peer-deps-external/",\
+          "packageDependencies": [\
+            ["rollup-plugin-peer-deps-external", "npm:2.2.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:2.2.4", {\
+          "packageLocation": "./.yarn/__virtual__/rollup-plugin-peer-deps-external-virtual-0d06560032/0/cache/rollup-plugin-peer-deps-external-npm-2.2.4-907ae6e3f2-597bc7631f.zip/node_modules/rollup-plugin-peer-deps-external/",\
+          "packageDependencies": [\
+            ["rollup-plugin-peer-deps-external", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:2.2.4"],\
+            ["@types/rollup", null],\
+            ["rollup", "npm:2.68.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/rollup",\
+            "rollup"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["rollup-plugin-terser", [\
         ["npm:7.0.2", {\
           "packageLocation": "./.yarn/cache/rollup-plugin-terser-npm-7.0.2-3f55469f5a-af84bb7a7a.zip/node_modules/rollup-plugin-terser/",\
@@ -14754,6 +14776,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:17.0.2"],\
             ["rollup", "npm:2.68.0"],\
+            ["rollup-plugin-peer-deps-external", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:2.2.4"],\
             ["semantic-ui-react", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:2.1.2"]\
           ],\
           "packagePeers": [\
@@ -14776,7 +14799,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:53b6ce7af9a944f1f9949f2675054aeb27faae5c4a9d2c8850ce87b733b76ef3d4c45225e4a188cc10db6d1b6efb587f9fddfb946b25367e607c8e9da9a7137b#npm:5.3.1"],\
             ["@rollup/plugin-commonjs", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:21.0.2"],\
             ["@rollup/plugin-node-resolve", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:13.1.3"],\
-            ["rollup", "npm:2.68.0"]\
+            ["rollup", "npm:2.68.0"],\
+            ["rollup-plugin-peer-deps-external", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:2.2.4"]\
           ],\
           "linkType": "SOFT"\
         }]\

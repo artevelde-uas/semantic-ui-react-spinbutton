@@ -1,6 +1,7 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 import pkg from './package.json';
 
@@ -15,6 +16,7 @@ export default {
         format: 'esm'
     }],
     plugins: [
+        peerDepsExternal(),
         nodeResolve({
             extensions: ['.js', '.jsx']
         }),
@@ -25,6 +27,7 @@ export default {
                 '@babel/preset-env',
                 '@babel/preset-react'
             ],
+            babelHelpers: 'bundled',
             comments: false
         })
     ]

@@ -10489,6 +10489,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-peer-deps-external@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "rollup-plugin-peer-deps-external@npm:2.2.4"
+  peerDependencies:
+    rollup: "*"
+  checksum: 597bc7631f4e3cfc066a7da4e09e507258aba932008148328c1a4b48e7ffa755592ef4bcf0165320bbd5019afbdd326f569cd0c68406d820da9ab52e971c009b
+  languageName: node
+  linkType: hard
+
 "rollup-plugin-terser@npm:^7.0.0":
   version: 7.0.2
   resolution: "rollup-plugin-terser@npm:7.0.2"
@@ -10683,6 +10692,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^21.0.2
     "@rollup/plugin-node-resolve": ^13.1.3
     rollup: ^2.68.0
+    rollup-plugin-peer-deps-external: ^2.2.4
   peerDependencies:
     react: "*"
     react-dom: "*"
