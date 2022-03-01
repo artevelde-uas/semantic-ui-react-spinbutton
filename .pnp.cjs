@@ -7204,7 +7204,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:17.0.2"],\
             ["react-scripts", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:5.0.0"],\
-            ["semantic-ui-css", "npm:2.4.1"],\
+            ["semantic-ui-css", "https://github.com/Semantic-Org/Semantic-UI-CSS.git#commit=01e4a5346496c284db3b19a102458731ccccd911"],\
             ["semantic-ui-react", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#npm:2.1.2"],\
             ["semantic-ui-react-spinbutton", "virtual:56655dccefeb57870db2fe3117292997fc9f96cec11bdfe7524b833a4665e07826505d869dc3eb64fc4a21ad76da2ad743f6a1761d2b5eafcd491195d94bbb8c#workspace:packages/lib"],\
             ["web-vitals", "npm:2.1.4"]\
@@ -14731,10 +14731,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["semantic-ui-css", [\
-        ["npm:2.4.1", {\
-          "packageLocation": "./.yarn/cache/semantic-ui-css-npm-2.4.1-488d289b03-6351d9bfbe.zip/node_modules/semantic-ui-css/",\
+        ["https://github.com/Semantic-Org/Semantic-UI-CSS.git#commit=01e4a5346496c284db3b19a102458731ccccd911", {\
+          "packageLocation": "./.yarn/cache/semantic-ui-css-https-e28d1aafcb-96143b391e.zip/node_modules/semantic-ui-css/",\
           "packageDependencies": [\
-            ["semantic-ui-css", "npm:2.4.1"],\
+            ["semantic-ui-css", "https://github.com/Semantic-Org/Semantic-UI-CSS.git#commit=01e4a5346496c284db3b19a102458731ccccd911"],\
             ["jquery", "npm:3.6.0"]\
           ],\
           "linkType": "HARD"\

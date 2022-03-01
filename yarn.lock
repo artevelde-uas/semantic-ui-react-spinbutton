@@ -4858,7 +4858,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-scripts: 5.0.0
-    semantic-ui-css: ^2.4.1
+    semantic-ui-css: "https://github.com/Semantic-Org/Semantic-UI-CSS.git"
     semantic-ui-react: ^2.1.2
     semantic-ui-react-spinbutton: "workspace:^"
     web-vitals: ^2.1.4
@@ -10689,12 +10689,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-ui-css@npm:^2.4.1":
+"semantic-ui-css@https://github.com/Semantic-Org/Semantic-UI-CSS.git":
   version: 2.4.1
-  resolution: "semantic-ui-css@npm:2.4.1"
+  resolution: "semantic-ui-css@https://github.com/Semantic-Org/Semantic-UI-CSS.git#commit=01e4a5346496c284db3b19a102458731ccccd911"
   dependencies:
     jquery: x.*
-  checksum: 6351d9bfbeed667a39b9cde08372865bd04612450103aabff174bc46558ad1ac123157cab2716670019abf5a70f56a77d79d082b4043d8893ed350b9a6fed837
+  checksum: 96143b391e950361f4ed0cc7ae16d2936989bd2781a11541b418d3a1a82e2653d5c071cc63cc05a5fd62810342a5d3aa88092c5ab950a8ad18501c0de8d7b6fd
   languageName: node
   linkType: hard
 
