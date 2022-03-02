@@ -9,19 +9,11 @@ export default ({ handleUp, handleDown, ...props }) => {
     const [value, setValue] = useState(props.value);
 
     function onUp() {
-        const newValue = handleUp && handleUp(value);
-
-        if (newValue === undefined) return;
-        
-        setValue(newValue);
+        handleUp && setValue(handleUp(value) ?? value);
     }
 
     function onDown() {
-        const newValue = handleDown && handleDown(value);
-
-        if (newValue === undefined) return;
-
-        setValue(newValue);
+        handleDown && setValue(handleDown(value) ?? value);
     }
 
     return (
