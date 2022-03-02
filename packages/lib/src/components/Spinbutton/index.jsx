@@ -11,13 +11,17 @@ export default ({ handleUp, handleDown, ...props }) => {
     function onUp() {
         const newValue = handleUp && handleUp(value);
 
-        newValue && setValue(newValue);
+        if (newValue === undefined) return;
+        
+        setValue(newValue);
     }
 
     function onDown() {
         const newValue = handleDown && handleDown(value);
 
-        newValue && setValue(newValue);
+        if (newValue === undefined) return;
+
+        setValue(newValue);
     }
 
     return (
