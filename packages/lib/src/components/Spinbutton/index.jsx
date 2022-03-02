@@ -20,6 +20,10 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
         setValue((handleChange && handleChange(event.target.value)) ?? event.target.value);
     }
     
+    function onWheel(event) {
+        (event.deltaY < 0) ? onUp() : onDown();
+    }
+
     return (
         <Input {...props}
             value={value}
@@ -40,6 +44,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
             }
             labelPosition='right'
             onChange={onChange}
+            onWheel={onWheel}
         />
     );
 }
