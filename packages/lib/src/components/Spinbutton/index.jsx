@@ -1,19 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import { Button } from 'semantic-ui-react';
 
 import styles from './index.module.css';
 
 
-export default (props) => (
-    <Input {...props}
-        className={styles.spinbutton}
-        label={
-            <div>
-                <Button className={styles.up} icon='angle up' />
-                <Button className={styles.down} icon='angle down' />
-            </div>
-        }
-        labelPosition='right'
-    />
-);
+export default ({ handleUp, handleDown, ...props }) => {
+    const [value, setValue] = useState(props.value);
+
+    function onUp() {
+        const newValue = handleUp && handleUp(value);
+
+        newValue && setValue(newValue);
+    }
+
+    function onDown() {
+        const newValue = handleDown && handleDown(value);
+
+        newValue && setValue(newValue);
+    }
+
+    return (
+        <Input {...props}
+            value={value}
+            className={styles.spinbutton}
+            label={
+                <div>
+                    <Button
+                        className={styles.up}
+                        icon='angle up'
+                        onClick={onUp}
+                    />
+                    <Button
+                        className={styles.down}
+                        icon='angle down'
+                        onClick={onDown}
+                    />
+                </div>
+            }
+            labelPosition='right'
+        />
+    );
+}
