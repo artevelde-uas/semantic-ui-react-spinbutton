@@ -5,11 +5,11 @@ import { Spinbutton } from 'semantic-ui-react-spinbutton';
 function App() {
     return (
         <Container text>
-            <Header as='h2'>Header</Header>
+            <Header as='h2'>Semantic UI React Spinbutton</Header>
             <Item.Group>
                 <Item>
                     <Item.Content>
-                        <Item.Header as='a'>Default</Item.Header>
+                        <Item.Header>Default Spinbutton</Item.Header>
                         <Item.Meta>Spinbutton with default settings</Item.Meta>
                         <Item.Description>
                             <Spinbutton placeholder='Placeholder' />
