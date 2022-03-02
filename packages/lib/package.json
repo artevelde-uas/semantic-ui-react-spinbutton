@@ -8,9 +8,11 @@
     "url": "https://github.com/artevelde-uas/semantic-ui-react-spinbutton.git",
     "directory": "packages/lib"
   },
-  "packageManager": "yarn@3.2.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "files": [
+    "./dist/**"
+  ],
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
