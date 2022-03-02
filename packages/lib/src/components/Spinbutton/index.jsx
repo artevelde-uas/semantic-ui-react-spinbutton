@@ -10,8 +10,8 @@ export default (props) => (
         className={styles.spinbutton}
         label={
             <div>
-                <Button className={styles.increase} icon='angle up' />
-                <Button className={styles.decrease} icon='angle down' />
+                <Button className={styles.up} icon='angle up' />
+                <Button className={styles.down} icon='angle down' />
             </div>
         }
         labelPosition='right'
