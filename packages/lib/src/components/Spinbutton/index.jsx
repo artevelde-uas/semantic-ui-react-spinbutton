@@ -5,7 +5,7 @@ import { Button } from 'semantic-ui-react';
 import styles from './index.module.css';
 
 
-export default ({ handleUp, handleDown, ...props }) => {
+export default ({ handleUp, handleDown, handleChange, ...props }) => {
     const [value, setValue] = useState(props.value);
 
     function onUp() {
@@ -16,6 +16,10 @@ export default ({ handleUp, handleDown, ...props }) => {
         handleDown && setValue(handleDown(value) ?? value);
     }
 
+    function onChange(event) {
+        setValue((handleChange && handleChange(event.target.value)) ?? event.target.value);
+    }
+    
     return (
         <Input {...props}
             value={value}
@@ -35,6 +39,7 @@ export default ({ handleUp, handleDown, ...props }) => {
                 </div>
             }
             labelPosition='right'
+            onChange={onChange}
         />
     );
 }
