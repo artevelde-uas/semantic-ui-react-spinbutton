@@ -10,6 +10,9 @@
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "files": [
+    "./dist/**"
+  ],
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
