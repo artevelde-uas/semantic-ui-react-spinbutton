@@ -2,22 +2,22 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-}
 
-:global(.ui.labeled.input).spinbutton > :global(.label) > :global(.ui.button) {
-  margin: 0;
-  padding: 0 .5em;
-  flex-grow: 1;
-}
+  & > :global(.ui.button) {
+    margin: 0;
+    padding: 0 .5em;
+    flex-grow: 1;
 
-:global(.ui.labeled.input).spinbutton > :global(.label) > :global(.ui.button).increase {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
+    &.increase {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
-:global(.ui.labeled.input).spinbutton > :global(.label) > :global(.ui.button).decrease {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
+    &.decrease {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
 }

@@ -36,7 +36,11 @@ export default {
             modules: true,
             extract: 'index.css',
             plugins: [
-                postcssPresetEnv()
+                postcssPresetEnv({
+                    features: {
+                        'nesting-rules': true
+                    }
+                })
             ]
         })
     ]
