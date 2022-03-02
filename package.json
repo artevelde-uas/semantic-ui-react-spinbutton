@@ -1,7 +1,18 @@
 {
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artevelde-uas/semantic-ui-react-spinbutton.git"
+  },
   "packageManager": "yarn@3.2.0",
   "workspaces": [
+    "packages/demo",
     "packages/lib"
-  ]
+  ],
+  "scripts": {
+    "build": "yarn workspace semantic-ui-react-spinbutton build",
+    "watch": "yarn workspace semantic-ui-react-spinbutton watch",
+    "start": "yarn workspace demo start",
+    "test": "yarn workspace demo test"
+  }
 }
