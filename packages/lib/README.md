@@ -20,6 +20,11 @@ or Yarn:
 import { Spinbutton } from 'semantic-ui-react-spinbutton';
 
 export default () => (
-    <Spinbutton placeholder='Placeholder' />
+    <Spinbutton
+        value='10'
+        handleUp={value => (Number(value) + 1) || 0}
+        handleDown={value => (Number(value) - 1) || 0}
+        readOnly
+    />
 );
 ```

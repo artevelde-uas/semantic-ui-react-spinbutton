@@ -1,7 +1,12 @@
 {
   "name": "semantic-ui-react-spinbutton",
   "description": "Spinbuttons for Semantic UI React",
-  "version": "0.1.0",
+  "keywords": [
+    "react",
+    "semantic-ui",
+    "spinbutton"
+  ],
+  "version": "0.2.0",
   "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
   "repository": {
     "type": "git",
@@ -11,7 +16,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "files": [
-    "./dist/**"
+    "dist/"
   ],
   "peerDependencies": {
     "react": "*",
