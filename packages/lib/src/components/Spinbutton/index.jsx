@@ -11,7 +11,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     function onUp() {
         handleUp && setValue(handleUp(value) ?? value);
     }
-
+    
     function onDown() {
         handleDown && setValue(handleDown(value) ?? value);
     }
@@ -34,11 +34,13 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
                         className={styles.up}
                         icon='angle up'
                         onClick={onUp}
+                        disabled={props.disabled}
                     />
                     <Button
                         className={styles.down}
                         icon='angle down'
                         onClick={onDown}
+                        disabled={props.disabled}
                     />
                 </div>
             }
