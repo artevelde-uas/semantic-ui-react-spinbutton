@@ -1,6 +1,11 @@
 {
   "name": "semantic-ui-react-spinbutton",
   "description": "Spinbuttons for Semantic UI React",
+  "keywords": [
+    "react",
+    "semantic-ui",
+    "spinbutton"
+  ],
   "version": "0.1.0",
   "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
   "repository": {
