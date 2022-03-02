@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
 
 import pkg from './package.json';
 
@@ -29,6 +30,10 @@ export default {
             ],
             babelHelpers: 'bundled',
             comments: false
+        }),
+        postcss({
+            modules: true,
+            extract: 'index.css'
         })
     ]
 };
