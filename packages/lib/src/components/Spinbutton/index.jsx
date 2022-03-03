@@ -11,7 +11,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     function onUp() {
         handleUp && setValue(handleUp(value) ?? value);
     }
-    
+
     function onDown() {
         handleDown && setValue(handleDown(value) ?? value);
     }
@@ -19,7 +19,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     function onChange(event) {
         handleChange && setValue(handleChange(event.target.value) ?? event.target.value);
     }
-    
+
     function onWheel(event) {
         (event.deltaY < 0) ? onUp() : onDown();
     }
@@ -53,6 +53,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
                 </div>
             }
             labelPosition='right'
+            iconPosition={props.icon && 'left'}
             onChange={onChange}
             onWheel={onWheel}
             ref={onRef}
