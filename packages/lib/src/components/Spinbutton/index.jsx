@@ -24,6 +24,14 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
         (event.deltaY < 0) ? onUp() : onDown();
     }
 
+    function onRef(node) {
+        const input = node?.inputRef.current;
+
+        input && (input.onwheel = event => {
+            event.preventDefault();
+        });
+    }
+
     return (
         <Input {...props}
             value={value}
@@ -47,6 +55,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
             labelPosition='right'
             onChange={onChange}
             onWheel={onWheel}
+            ref={onRef}
         />
     );
 }
