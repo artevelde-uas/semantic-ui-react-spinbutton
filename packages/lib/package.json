@@ -6,7 +6,7 @@
     "semantic-ui",
     "spinbutton"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
   "repository": {
     "type": "git",
