@@ -17,7 +17,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     }
 
     function onChange(event) {
-        setValue((handleChange && handleChange(event.target.value)) ?? event.target.value);
+        handleChange && setValue(handleChange(event.target.value) ?? event.target.value);
     }
     
     function onWheel(event) {
