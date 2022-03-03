@@ -52,6 +52,17 @@ export default () => (
                     </Item.Description>
                 </Item.Content>
             </Item>
+            <Item>
+                <Item.Content>
+                    <Item.Header>Spinbutton with icon</Item.Header>
+                    <Item.Description>
+                        <Spinbutton
+                            placeholder='Placeholder'
+                            icon='home'
+                        />
+                    </Item.Description>
+                </Item.Content>
+            </Item>
         </Item.Group>
     </Container>
 );

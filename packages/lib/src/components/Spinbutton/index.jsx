@@ -11,17 +11,30 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     function onUp() {
         handleUp && setValue(handleUp(value) ?? value);
     }
-    
+
     function onDown() {
         handleDown && setValue(handleDown(value) ?? value);
     }
 
     function onChange(event) {
-        setValue((handleChange && handleChange(event.target.value)) ?? event.target.value);
+        handleChange && setValue(handleChange(event.target.value) ?? event.target.value);
     }
-    
+
     function onWheel(event) {
         (event.deltaY < 0) ? onUp() : onDown();
+    }
+
+    function onKeyDown(event) {
+        switch (event.key) {
+            case 'ArrowUp':
+            case '+':
+                onUp();
+                break;
+            case 'ArrowDown':
+            case '-':
+                onDown();
+                break;
+        }
     }
 
     function onRef(node) {
@@ -37,7 +50,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
             value={value}
             className={styles.spinbutton}
             label={
-                <div>
+                <div className={styles.spinner}>
                     <Button
                         className={styles.up}
                         icon='angle up'
@@ -53,8 +66,10 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
                 </div>
             }
             labelPosition='right'
+            iconPosition={props.icon && 'left'}
             onChange={onChange}
             onWheel={onWheel}
+            onKeyDown={props.readOnly && onKeyDown}
             ref={onRef}
         />
     );
