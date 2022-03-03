@@ -1,4 +1,4 @@
-:global(.ui.labeled.input).spinbutton > :global(.label) {
+:global(.ui.labeled.input).spinbutton > .spinner {
   display: flex;
   flex-direction: column;
   padding: 0;

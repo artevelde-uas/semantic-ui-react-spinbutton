@@ -37,7 +37,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
             value={value}
             className={styles.spinbutton}
             label={
-                <div>
+                <div className={styles.spinner}>
                     <Button
                         className={styles.up}
                         icon='angle up'
