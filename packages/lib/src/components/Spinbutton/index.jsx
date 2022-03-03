@@ -27,7 +27,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     function onRef(node) {
         const input = node?.inputRef.current;
 
-        input && (input.onwheel = event => {
+        input && (input.parentElement.onwheel = event => {
             event.preventDefault();
         });
     }
