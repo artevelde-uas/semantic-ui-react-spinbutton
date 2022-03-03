@@ -24,6 +24,19 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
         (event.deltaY < 0) ? onUp() : onDown();
     }
 
+    function onKeyDown(event) {
+        switch (event.key) {
+            case 'ArrowUp':
+            case '+':
+                onUp();
+                break;
+            case 'ArrowDown':
+            case '-':
+                onDown();
+                break;
+        }
+    }
+
     function onRef(node) {
         const input = node?.inputRef.current;
 
@@ -56,6 +69,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
             iconPosition={props.icon && 'left'}
             onChange={onChange}
             onWheel={onWheel}
+            onKeyDown={props.readOnly && onKeyDown}
             ref={onRef}
         />
     );
