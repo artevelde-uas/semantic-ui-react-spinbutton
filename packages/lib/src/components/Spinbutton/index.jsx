@@ -25,6 +25,8 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     }
 
     function onKeyDown(event) {
+        event.preventDefault();
+        
         switch (event.key) {
             case 'ArrowUp':
             case '+':
