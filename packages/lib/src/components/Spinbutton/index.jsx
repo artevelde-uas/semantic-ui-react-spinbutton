@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import Spinner from '../Spinner';
 
+import styles from './index.module.css';
 
 
 export default ({ handleUp, handleDown, handleChange, ...props }) => {
@@ -50,6 +51,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
 
     return (
         <Input {...props}
+            className={styles.spinbutton}
             value={value}
             label={
                 <Spinner
