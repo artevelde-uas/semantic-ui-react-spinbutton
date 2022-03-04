@@ -1,3 +1,7 @@
-import Spinbutton from "./components/Spinbutton";
+import Spinbutton from './components/Spinbutton';
+import Spinner from './components/Spinner';
 
-export { Spinbutton };
+export {
+    Spinbutton,
+    Spinner
+};

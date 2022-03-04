@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Input } from 'semantic-ui-react';
-import { Button } from 'semantic-ui-react';
+import Spinner from '../Spinner';
 
-import styles from './index.module.css';
 
 
 export default ({ handleUp, handleDown, handleChange, ...props }) => {
@@ -26,7 +25,7 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
 
     function onKeyDown(event) {
         event.preventDefault();
-        
+
         switch (event.key) {
             case 'ArrowUp':
             case '+':
@@ -52,22 +51,11 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     return (
         <Input {...props}
             value={value}
-            className={styles.spinbutton}
             label={
-                <div className={styles.spinner}>
-                    <Button
-                        className={styles.up}
-                        icon='caret up'
-                        onClick={onUp}
-                        disabled={props.disabled}
-                    />
-                    <Button
-                        className={styles.down}
-                        icon='caret down'
-                        onClick={onDown}
-                        disabled={props.disabled}
-                    />
-                </div>
+                <Spinner
+                    onUp={onUp}
+                    onDown={onDown}
+                />
             }
             labelPosition='right'
             iconPosition={props.icon && 'left'}
