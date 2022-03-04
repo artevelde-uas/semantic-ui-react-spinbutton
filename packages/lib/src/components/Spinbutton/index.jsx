@@ -57,13 +57,13 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
                 <div className={styles.spinner}>
                     <Button
                         className={styles.up}
-                        icon='angle up'
+                        icon='caret up'
                         onClick={onUp}
                         disabled={props.disabled}
                     />
                     <Button
                         className={styles.down}
-                        icon='angle down'
+                        icon='caret down'
                         onClick={onDown}
                         disabled={props.disabled}
                     />
