@@ -6362,6 +6362,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["classnames", [\
+        ["npm:2.3.1", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.1-f2ae0a8d3c-14db8889d5.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["clean-css", [\
         ["npm:5.2.4", {\
           "packageLocation": "./.yarn/cache/clean-css-npm-5.2.4-1adfa4d5a8-16f4e9de63.zip/node_modules/clean-css/",\
@@ -16461,6 +16470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],\
             ["@types/react-dom", null],\
             ["@types/semantic-ui-react", null],\
+            ["classnames", "npm:2.3.1"],\
             ["cpy-cli", "npm:4.0.0"],\
             ["postcss-preset-env", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:7.4.1"],\
             ["react", "npm:17.0.2"],\
@@ -16491,6 +16501,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:53b6ce7af9a944f1f9949f2675054aeb27faae5c4a9d2c8850ce87b733b76ef3d4c45225e4a188cc10db6d1b6efb587f9fddfb946b25367e607c8e9da9a7137b#npm:5.3.1"],\
             ["@rollup/plugin-commonjs", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:21.0.2"],\
             ["@rollup/plugin-node-resolve", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:13.1.3"],\
+            ["classnames", "npm:2.3.1"],\
             ["cpy-cli", "npm:4.0.0"],\
             ["postcss-preset-env", "virtual:22115187b208192af3444c4ca66e18bc752cae666dfc9e3b990529fcea5d8fc9a100f6c444359236922baef2c82eea0ccb1eb4a8e970f4d1e85f454ae57fdd7a#npm:7.4.1"],\
             ["rimraf", "npm:3.0.2"],\
