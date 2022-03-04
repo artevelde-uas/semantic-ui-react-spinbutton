@@ -38,8 +38,10 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     }
 
     function onRef(node) {
+        // Get a reference to the current native INPUT element
         const input = node?.inputRef.current;
 
+        // Handle the wheel event on the real INPUT element
         input && (input.parentElement.onwheel = event => {
             event.preventDefault();
         });
