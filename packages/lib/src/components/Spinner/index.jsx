@@ -27,6 +27,7 @@ export default ({
     );
     const buttonsClassName = classNames(
         styles.buttons,
+        styles[position],
         styles[orientation]
     );
 

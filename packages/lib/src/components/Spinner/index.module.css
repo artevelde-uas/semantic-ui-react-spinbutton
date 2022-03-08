@@ -74,4 +74,33 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+
+  /* Remove rounded corners on buttons next to content */
+  & > .buttons.right.vertical > .up,
+  & > .buttons.right.horizontal > .down,
+  & > .buttons.bottom.vertical > .up,
+  & > .buttons.bottom.horizontal > .down {
+    border-top-left-radius: 0;
+  }
+
+  & > .buttons.left.vertical > .up,
+  & > .buttons.left.horizontal > .up,
+  & > .buttons.bottom.vertical > .up,
+  & > .buttons.bottom.horizontal > .up {
+    border-top-right-radius: 0;
+  }
+
+  & > .buttons.left.vertical > .down,
+  & > .buttons.left.horizontal > .up,
+  & > .buttons.top.vertical > .down,
+  & > .buttons.top.horizontal > .up {
+    border-bottom-right-radius: 0;
+  }
+
+  & > .buttons.right.vertical > .down,
+  & > .buttons.right.horizontal > .down,
+  & > .buttons.top.vertical > .down,
+  & > .buttons.top.horizontal > .down {
+    border-bottom-left-radius: 0;
+  }
 }
