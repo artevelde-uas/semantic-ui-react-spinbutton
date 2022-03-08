@@ -10,6 +10,7 @@ export default ({
     buttonOrientation = 'vertical',
     onUp,
     onDown,
+    onWheel,
     className,
     disabled,
     children,
@@ -29,11 +30,23 @@ export default ({
         styles[buttonOrientation]
     );
 
+    function onRef(node) {
+        // Get a reference to the current native BUTTON element
+        const button = node?.ref.current;
+
+        // Handle the wheel event on the real BUTTON element
+        button && (button.onwheel = event => {
+            event.preventDefault();
+        });
+    }
+
     const ButtonUp = (
         <Button
             className={styles.up}
             icon='caret up'
             onClick={onUp}
+            onWheel={onWheel}
+            ref={onWheel && onRef}
             disabled={disabled}
         />
     );
@@ -42,6 +55,8 @@ export default ({
             className={styles.down}
             icon='caret down'
             onClick={onDown}
+            onWheel={onWheel}
+            ref={onWheel && onRef}
             disabled={disabled}
         />
     );
