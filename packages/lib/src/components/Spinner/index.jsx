@@ -20,10 +20,11 @@ export default ({
         (position === 'left' || position === 'right') ? 'horizontal' :
             (position === 'top' || position === 'bottom') ? 'vertical' :
                 orientation;
-    const contentClassName = classNames(
+    const wrapperClassName = classNames(
         className,
         styles.spinner,
-        styles[contentOrientation]
+        styles[contentOrientation],
+        { [styles.wrapped]: (position === 'wrapped' && children) }
     );
     const buttonsClassName = classNames(
         styles.buttons,
@@ -63,7 +64,7 @@ export default ({
     );
 
     return (
-        <div {...props} className={contentClassName}>
+        <div {...props} className={wrapperClassName}>
             {(position === 'wrapped') ? (
                 <React.Fragment>
                     {ButtonUp}
