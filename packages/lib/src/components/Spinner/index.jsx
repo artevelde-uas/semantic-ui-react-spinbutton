@@ -6,8 +6,8 @@ import styles from './index.module.css';
 
 
 export default ({
-    contentPosition = 'center',
-    buttonOrientation = 'vertical',
+    position = 'wrapped',
+    orientation = 'vertical',
     onUp,
     onDown,
     onWheel,
@@ -17,9 +17,9 @@ export default ({
     ...props
 }) => {
     const contentOrientation =
-        (contentPosition === 'left' || contentPosition === 'right') ? 'horizontal' :
-            (contentPosition === 'top' || contentPosition === 'bottom') ? 'vertical' :
-                buttonOrientation;
+        (position === 'left' || position === 'right') ? 'horizontal' :
+            (position === 'top' || position === 'bottom') ? 'vertical' :
+                orientation;
     const contentClassName = classNames(
         className,
         styles.spinner,
@@ -27,7 +27,7 @@ export default ({
     );
     const buttonsClassName = classNames(
         styles.buttons,
-        styles[buttonOrientation]
+        styles[orientation]
     );
 
     function refHandler(node) {
@@ -63,27 +63,27 @@ export default ({
 
     return (
         <div {...props} className={contentClassName}>
-            {(contentPosition === 'center') ? (
+            {(position === 'wrapped') ? (
                 <React.Fragment>
                     {ButtonUp}
                     {children}
                     {ButtonDown}
                 </React.Fragment>
-            ) : (contentPosition === 'top' || contentPosition === 'left') ? (
+            ) : (position === 'top' || position === 'left') ? (
                 <React.Fragment>
-                    {children}
                     <div className={buttonsClassName}>
                         {ButtonUp}
                         {ButtonDown}
                     </div>
+                    {children}
                 </React.Fragment>
             ) : (
                 <React.Fragment>
+                    {children}
                     <div className={buttonsClassName}>
                         {ButtonUp}
                         {ButtonDown}
                     </div>
-                    {children}
                 </React.Fragment>
             )}
         </div>

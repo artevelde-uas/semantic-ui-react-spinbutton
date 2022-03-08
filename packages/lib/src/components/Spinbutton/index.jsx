@@ -6,7 +6,7 @@ import styles from './index.module.css';
 
 
 export default ({
-    contentPosition = 'left',
+    buttonPosition = 'right',
     buttonOrientation = 'vertical',
     onUp,
     onDown,
@@ -59,8 +59,8 @@ export default ({
 
     return (
         <Spinner
-            contentPosition={contentPosition}
-            buttonOrientation={buttonOrientation}
+            position={buttonPosition}
+            orientation={buttonOrientation}
             onUp={upHandler}
             onDown={downHandler}
             onWheel={wheelHandler}
