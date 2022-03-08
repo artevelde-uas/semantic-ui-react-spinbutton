@@ -5,7 +5,15 @@ import Spinner from '../Spinner';
 import styles from './index.module.css';
 
 
-export default ({ handleUp, handleDown, handleChange, ...props }) => {
+export default ({
+    contentPosition = 'left',
+    buttonOrientation = 'vertical',
+    handleUp,
+    handleDown,
+    handleChange,
+    disabled,
+    ...props
+}) => {
     const [value, setValue] = useState(props.value);
 
     function onUp() {
@@ -50,21 +58,22 @@ export default ({ handleUp, handleDown, handleChange, ...props }) => {
     }
 
     return (
-        <Input {...props}
-            className={styles.spinbutton}
-            value={value}
-            label={
-                <Spinner
-                    onUp={onUp}
-                    onDown={onDown}
-                />
-            }
-            labelPosition='right'
-            iconPosition={props.icon && 'left'}
-            onChange={onChange}
+        <Spinner
+            contentPosition={contentPosition}
+            buttonOrientation={buttonOrientation}
+            onUp={onUp}
+            onDown={onDown}
             onWheel={onWheel}
-            onKeyDown={props.readOnly && onKeyDown}
-            ref={onRef}
-        />
+            disabled={disabled}
+        >
+            <Input {...props}
+                className={styles.spinbutton}
+                value={value}
+                onChange={onChange}
+                onKeyDown={props.readOnly && onKeyDown}
+                onWheel={onWheel}
+                ref={onRef}
+            />
+        </Spinner>
     );
 }

@@ -5,24 +5,72 @@ import classNames from 'classnames';
 import styles from './index.module.css';
 
 
-export default ({ onUp, onDown, className, disabled, ...props }) => (
-    <div {...props}
-        className={classNames(
-            className,
-            styles.spinner
-        )}
-    >
+export default ({
+    contentPosition = 'center',
+    buttonOrientation = 'vertical',
+    onUp,
+    onDown,
+    className,
+    disabled,
+    children,
+    ...props
+}) => {
+    const contentOrientation =
+        (contentPosition === 'left' || contentPosition === 'right') ? 'horizontal' :
+            (contentPosition === 'top' || contentPosition === 'bottom') ? 'vertical' :
+                buttonOrientation;
+    const contentClassName = classNames(
+        className,
+        styles.spinner,
+        styles[contentOrientation]
+    );
+    const buttonsClassName = classNames(
+        styles.buttons,
+        styles[buttonOrientation]
+    );
+
+    const ButtonUp = (
         <Button
             className={styles.up}
             icon='caret up'
             onClick={onUp}
             disabled={disabled}
         />
+    );
+    const ButtonDown = (
         <Button
             className={styles.down}
             icon='caret down'
             onClick={onDown}
             disabled={disabled}
         />
-    </div>
-);
+    );
+
+    return (
+        <div {...props} className={contentClassName}>
+            {(contentPosition === 'center') ? (
+                <React.Fragment>
+                    {ButtonUp}
+                    {children}
+                    {ButtonDown}
+                </React.Fragment>
+            ) : (contentPosition === 'top' || contentPosition === 'left') ? (
+                <React.Fragment>
+                    {children}
+                    <div className={buttonsClassName}>
+                        {ButtonUp}
+                        {ButtonDown}
+                    </div>
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                    <div className={buttonsClassName}>
+                        {ButtonUp}
+                        {ButtonDown}
+                    </div>
+                    {children}
+                </React.Fragment>
+            )}
+        </div>
+    );
+}
