@@ -8,46 +8,46 @@ import styles from './index.module.css';
 export default ({
     contentPosition = 'left',
     buttonOrientation = 'vertical',
-    handleUp,
-    handleDown,
-    handleChange,
+    onUp,
+    onDown,
+    onChange,
     disabled,
     ...props
 }) => {
     const [value, setValue] = useState(props.value);
 
-    function onUp() {
-        handleUp && setValue(handleUp(value) ?? value);
+    function upHandler() {
+        onUp && setValue(onUp(value) ?? value);
     }
 
-    function onDown() {
-        handleDown && setValue(handleDown(value) ?? value);
+    function downHandler() {
+        onDown && setValue(onDown(value) ?? value);
     }
 
-    function onChange(event) {
-        handleChange && setValue(handleChange(event.target.value) ?? event.target.value);
+    function changeHandler(event) {
+        onChange && setValue(onChange(event.target.value) ?? event.target.value);
     }
 
-    function onWheel(event) {
-        (event.deltaY < 0) ? onUp() : onDown();
+    function wheelHandler(event) {
+        (event.deltaY < 0) ? upHandler() : downHandler();
     }
 
-    function onKeyDown(event) {
+    function keyHandler(event) {
         event.preventDefault();
 
         switch (event.key) {
             case 'ArrowUp':
             case '+':
-                onUp();
+                upHandler();
                 break;
             case 'ArrowDown':
             case '-':
-                onDown();
+                downHandler();
                 break;
         }
     }
 
-    function onRef(node) {
+    function refHandler(node) {
         // Get a reference to the current native INPUT element
         const input = node?.inputRef.current;
 
@@ -61,18 +61,18 @@ export default ({
         <Spinner
             contentPosition={contentPosition}
             buttonOrientation={buttonOrientation}
-            onUp={onUp}
-            onDown={onDown}
-            onWheel={onWheel}
+            onUp={upHandler}
+            onDown={downHandler}
+            onWheel={wheelHandler}
             disabled={disabled}
         >
             <Input {...props}
                 className={styles.spinbutton}
                 value={value}
-                onChange={onChange}
-                onKeyDown={props.readOnly && onKeyDown}
-                onWheel={onWheel}
-                ref={onRef}
+                onChange={changeHandler}
+                onKeyDown={props.readOnly && keyHandler}
+                onWheel={wheelHandler}
+                ref={refHandler}
             />
         </Spinner>
     );

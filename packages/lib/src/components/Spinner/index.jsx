@@ -30,7 +30,7 @@ export default ({
         styles[buttonOrientation]
     );
 
-    function onRef(node) {
+    function refHandler(node) {
         // Get a reference to the current native BUTTON element
         const button = node?.ref.current;
 
@@ -46,7 +46,7 @@ export default ({
             icon='caret up'
             onClick={onUp}
             onWheel={onWheel}
-            ref={onWheel && onRef}
+            ref={onWheel && refHandler}
             disabled={disabled}
         />
     );
@@ -56,7 +56,7 @@ export default ({
             icon='caret down'
             onClick={onDown}
             onWheel={onWheel}
-            ref={onWheel && onRef}
+            ref={onWheel && refHandler}
             disabled={disabled}
         />
     );
