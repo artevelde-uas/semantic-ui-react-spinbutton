@@ -49,4 +49,29 @@
     padding-left: .5em;
     padding-right: .5em;
   }
+
+  /* Remove rounded corners between buttons */
+  &.vertical > :global(.ui.icon.button).up,
+  & > .buttons.vertical > :global(.ui.icon.button).up {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.vertical > :global(.ui.icon.button).down,
+  & > .buttons.vertical > :global(.ui.icon.button).down {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &.horizontal > :global(.ui.icon.button).up,
+  & > .buttons.horizontal > :global(.ui.icon.button).up {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.horizontal > :global(.ui.icon.button).down,
+  & > .buttons.horizontal > :global(.ui.icon.button).down {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
