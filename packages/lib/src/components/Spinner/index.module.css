@@ -18,6 +18,18 @@
     flex-grow: 1;
   }
 
+  /* Reverse button order on horizontal layout */
+  &.horizontal,
+  & > .buttons.horizontal {
+    & > :global(.ui.icon.button).up {
+      order: 1;
+    }
+
+    & > :global(.ui.icon.button).down {
+      order: -1;
+    }
+  }
+
   &.vertical > :global(.ui.icon.button).up,
   &.vertical > :global(.ui.icon.button).down,
   & > .buttons.vertical > :global(.ui.icon.button).up,
