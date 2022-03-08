@@ -1,4 +1,5 @@
 .spinner {
+  /* Use flex layout */
   &,
   & > .buttons {
     display: inline-flex;
@@ -12,6 +13,7 @@
     }
   }
 
+  /* Fit Buttons into container */
   & :global(.ui.icon.button).up,
   & :global(.ui.icon.button).down {
     margin: 0;
@@ -30,6 +32,7 @@
     }
   }
 
+  /* Wider buttons on vertical layout */
   &.vertical > :global(.ui.icon.button).up,
   &.vertical > :global(.ui.icon.button).down,
   & > .buttons.vertical > :global(.ui.icon.button).up,
@@ -38,6 +41,7 @@
     padding-bottom: .25em;
   }
 
+  /* Thinner buttons on horizontal layout */
   &.horizontal :global(.ui.icon.button).up,
   &.horizontal :global(.ui.icon.button).down,
   & > .buttons.horizontal > :global(.ui.icon.button).up,
