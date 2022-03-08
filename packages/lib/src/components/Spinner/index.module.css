@@ -14,8 +14,8 @@
   }
 
   /* Fit Buttons into container */
-  & :global(.ui.icon.button).up,
-  & :global(.ui.icon.button).down {
+  & .up,
+  & .down {
     margin: 0;
     flex-grow: 1;
   }
@@ -23,54 +23,54 @@
   /* Reverse button order on horizontal layout */
   &.horizontal,
   & > .buttons.horizontal {
-    & > :global(.ui.icon.button).up {
+    & > .up {
       order: 1;
     }
 
-    & > :global(.ui.icon.button).down {
+    & > .down {
       order: -1;
     }
   }
 
   /* Wider buttons on vertical layout */
-  &.vertical > :global(.ui.icon.button).up,
-  &.vertical > :global(.ui.icon.button).down,
-  & > .buttons.vertical > :global(.ui.icon.button).up,
-  & > .buttons.vertical > :global(.ui.icon.button).down {
+  &.vertical > .up,
+  &.vertical > .down,
+  & > .buttons.vertical > .up,
+  & > .buttons.vertical > .down {
     padding-top: .25em;
     padding-bottom: .25em;
   }
 
   /* Thinner buttons on horizontal layout */
-  &.horizontal :global(.ui.icon.button).up,
-  &.horizontal :global(.ui.icon.button).down,
-  & > .buttons.horizontal > :global(.ui.icon.button).up,
-  & > .buttons.horizontal > :global(.ui.icon.button).down {
+  &.horizontal > .up,
+  &.horizontal > .down,
+  & > .buttons.horizontal > .up,
+  & > .buttons.horizontal > .down {
     padding-left: .5em;
     padding-right: .5em;
   }
 
   /* Remove rounded corners between buttons */
-  &.vertical > :global(.ui.icon.button).up,
-  & > .buttons.vertical > :global(.ui.icon.button).up {
+  &.vertical > .up,
+  & > .buttons.vertical > .up {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  &.vertical > :global(.ui.icon.button).down,
-  & > .buttons.vertical > :global(.ui.icon.button).down {
+  &.vertical > .down,
+  & > .buttons.vertical > .down {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
 
-  &.horizontal > :global(.ui.icon.button).up,
-  & > .buttons.horizontal > :global(.ui.icon.button).up {
+  &.horizontal > .up,
+  & > .buttons.horizontal > .up {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  &.horizontal > :global(.ui.icon.button).down,
-  & > .buttons.horizontal > :global(.ui.icon.button).down {
+  &.horizontal > .down,
+  & > .buttons.horizontal > .down {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
