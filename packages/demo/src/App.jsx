@@ -168,8 +168,8 @@ const SpinnerVariantExamples = () => (
 );
 
 const panes = [
-    { menuItem: 'Spinner positions', render: SpinnerPositionExamples },
-    { menuItem: 'Spinner variants', render: SpinnerVariantExamples }
+    { menuItem: 'Spinner positions', render: () => <SpinnerPositionExamples /> },
+    { menuItem: 'Spinner variants', render: () => <SpinnerVariantExamples /> }
 ];
 
 export default () => (
