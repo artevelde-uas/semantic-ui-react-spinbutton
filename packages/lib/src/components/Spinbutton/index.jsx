@@ -73,6 +73,7 @@ export default ({
                 onKeyDown={props.readOnly && keyHandler}
                 onWheel={wheelHandler}
                 ref={refHandler}
+                disabled={disabled}
             />
         </Spinner>
     );
