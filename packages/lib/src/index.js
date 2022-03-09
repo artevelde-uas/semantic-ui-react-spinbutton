@@ -1,7 +1,7 @@
 import Spinbutton from './components/Spinbutton';
-import Spinner from './components/Spinner';
+import InputSpinner from './components/InputSpinner';
 
 export {
     Spinbutton,
-    Spinner
+    InputSpinner
 };

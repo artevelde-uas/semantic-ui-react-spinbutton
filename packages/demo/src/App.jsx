@@ -1,118 +1,143 @@
-import { Tab, Container, Header, Item } from 'semantic-ui-react';
-import { Spinner, Spinbutton } from 'semantic-ui-react-spinbutton';
+import { Tab, Container, Header, Item, Input } from 'semantic-ui-react';
+import { InputSpinner, Spinbutton } from 'semantic-ui-react-spinbutton';
 
 
-const SpinnerPositionExamples = () => (
+const Content = () => (
+    <div style={{
+        border: '1px solid rgba(34, 36, 38, 0.15)',
+        padding: '0.67857143em 1em',
+        color: 'rgba(34, 36, 38, 0.15)'
+    }}>
+        Placeholder
+    </div>
+);
+
+const SpinbuttonPositionExamples = () => (
     <Item.Group>
         <Item>
             <Item.Content>
-                <Item.Header>Spinner only</Item.Header>
-                <Item.Meta>Vertical spinner</Item.Meta>
+                <Item.Header>Spinbutton only</Item.Header>
+                <Item.Meta>Vertical spinbuttons</Item.Meta>
                 <Item.Description>
-                    <Spinner orientation='vertical' />
+                    <Spinbutton orientation='vertical' />
                 </Item.Description>
-                <Item.Meta>Horizontal spinner</Item.Meta>
+                <Item.Meta>Horizontal spinbuttons</Item.Meta>
                 <Item.Description>
-                    <Spinner orientation='horizontal' />
-                </Item.Description>
-            </Item.Content>
-        </Item>
-        <Item>
-            <Item.Content>
-                <Item.Header>Horizontal spinbuttons</Item.Header>
-                <Item.Meta>Spinbutton with vertical spinner on the right</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='right'
-                        buttonOrientation='vertical'
-                    />
-                </Item.Description>
-                <Item.Meta>Spinbutton with horizontal spinner on the right</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='right'
-                        buttonOrientation='horizontal'
-                    />
-                </Item.Description>
-                <Item.Meta>Spinbutton with vertical spinner on the left</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='left'
-                        buttonOrientation='vertical'
-                    />
-                </Item.Description>
-                <Item.Meta>Spinbutton with horizontal spinner on the left</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='left'
-                        buttonOrientation='horizontal'
-                    />
-                </Item.Description>
-                <Item.Meta>Spinbutton with horizontal wrapped spinner</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='wrapped'
-                        buttonOrientation='horizontal'
-                    />
+                    <Spinbutton orientation='horizontal' />
                 </Item.Description>
             </Item.Content>
         </Item>
         <Item>
             <Item.Content>
-                <Item.Header>Vertical spinbuttons</Item.Header>
-                <Item.Meta>Spinbutton with vertical spinner at the top</Item.Meta>
+                <Item.Header>Horizontal layout</Item.Header>
+                <Item.Meta>Content with vertical spinbutton on the right</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        buttonPosition='top'
-                        buttonOrientation='vertical'
-                        style={{ width: '100px' }}
-                    />
+                        position='right'
+                        orientation='vertical'
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
-                <Item.Meta>Spinbutton with horizontal spinner at the top</Item.Meta>
+                <Item.Meta>Content with horizontal spinbutton on the right</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        buttonPosition='top'
-                        buttonOrientation='horizontal'
-                        style={{ width: '100px' }}
-                    />
+                        position='right'
+                        orientation='horizontal'
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
-                <Item.Meta>Spinbutton with vertical spinner at the bottom</Item.Meta>
+                <Item.Meta>Content with vertical spinbutton on the left</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        buttonPosition='bottom'
-                        buttonOrientation='vertical'
-                        style={{ width: '100px' }}
-                    />
+                        position='left'
+                        orientation='vertical'
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
-                <Item.Meta>Spinbutton with horizontal spinner at the bottom</Item.Meta>
+                <Item.Meta>Content with horizontal spinbutton on the left</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        buttonPosition='bottom'
-                        buttonOrientation='horizontal'
-                        style={{ width: '100px' }}
-                    />
+                        position='left'
+                        orientation='horizontal'
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
-                <Item.Meta>Spinbutton with vertical wrapped spinner</Item.Meta>
+                <Item.Meta>Content with horizontal wrapped spinbutton</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        buttonPosition='wrapped'
-                        buttonOrientation='vertical'
-                        style={{ width: '100px' }}
-                    />
+                        position='wrapped'
+                        orientation='horizontal'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+            </Item.Content>
+        </Item>
+        <Item>
+            <Item.Content>
+                <Item.Header>Vertical layout</Item.Header>
+                <Item.Meta>Content with vertical spinbutton at the top</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        position='top'
+                        orientation='vertical'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Meta>Content with horizontal spinbutton at the top</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        position='top'
+                        orientation='horizontal'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Meta>Content with vertical spinbutton at the bottom</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        position='bottom'
+                        orientation='vertical'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Meta>Content with horizontal spinbutton at the bottom</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        position='bottom'
+                        orientation='horizontal'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Meta>Content with vertical wrapped spinbutton</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        position='wrapped'
+                        orientation='vertical'
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
             </Item.Content>
         </Item>
     </Item.Group>
 );
 
-const SpinnerVariantExamples = () => (
+const InputSpinnerVariantExamples = () => (
     <Item.Group>
         <Item>
             <Item.Content>
                 <Item.Header>Default Spinbutton</Item.Header>
                 <Item.Meta>Default spinbutton with no behavior</Item.Meta>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         placeholder='Placeholder'
                     />
                 </Item.Description>
@@ -123,7 +148,7 @@ const SpinnerVariantExamples = () => (
                 <Item.Header>Number Spinbutton</Item.Header>
                 <Item.Meta>Spinbutton with numbers (editable)</Item.Meta>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         value='10'
                         onUp={value => (Number(value) + 1) || 0}
                         onDown={value => (Number(value) - 1) || 0}
@@ -132,7 +157,7 @@ const SpinnerVariantExamples = () => (
                 </Item.Description>
                 <Item.Meta>Spinbutton with numbers (not editable)</Item.Meta>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         placeholder='Placeholder'
                         value='10'
                         onUp={value => (Number(value) + 1) || 0}
@@ -146,7 +171,7 @@ const SpinnerVariantExamples = () => (
             <Item.Content>
                 <Item.Header>Disabled Spinbutton</Item.Header>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         placeholder='Placeholder'
                         disabled
                     />
@@ -158,7 +183,7 @@ const SpinnerVariantExamples = () => (
                 <Item.Header>Labeled spinbuttons</Item.Header>
                 <Item.Meta>Spinbutton with icon</Item.Meta>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         placeholder='Placeholder'
                         icon='home'
                     />
@@ -166,7 +191,7 @@ const SpinnerVariantExamples = () => (
                 <Item.Header></Item.Header>
                 <Item.Meta>Spinbutton with label on the left</Item.Meta>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         placeholder='Placeholder'
                         label='http://'
                     />
@@ -174,7 +199,7 @@ const SpinnerVariantExamples = () => (
                 <Item.Header></Item.Header>
                 <Item.Meta>Spinbutton with label on the right</Item.Meta>
                 <Item.Description>
-                    <Spinbutton
+                    <InputSpinner
                         placeholder='Placeholder'
                         label={{ basic: true, content: 'kg' }}
                         labelPosition='right'
@@ -186,8 +211,8 @@ const SpinnerVariantExamples = () => (
 );
 
 const panes = [
-    { menuItem: 'Spinner positions', render: () => <SpinnerPositionExamples /> },
-    { menuItem: 'Spinner variants', render: () => <SpinnerVariantExamples /> }
+    { menuItem: 'Spinbutton positions', render: () => <SpinbuttonPositionExamples /> },
+    { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> }
 ];
 
 export default () => (

@@ -1,93 +1,97 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Input } from 'semantic-ui-react';
+import React, { useRef, useEffect } from 'react';
+import { Button } from 'semantic-ui-react';
 import classNames from 'classnames';
-
-import Spinner from '../Spinner';
 
 import styles from './index.module.css';
 
 
 export default ({
-    value: defaultValue,
-    buttonPosition = 'right',
-    buttonOrientation = 'vertical',
+    position = 'wrapped',
+    orientation = 'vertical',
     onUp,
     onDown,
-    onChange,
+    onWheel,
     className,
     disabled,
+    children,
     ...props
 }) => {
-    // Get reference to input component
-    const inputRef = useRef();
+    // Get references to button components
+    const buttonUpRef = useRef();
+    const buttonDownRef = useRef();
 
-    // Store the input value
-    const [value, setValue] = useState(defaultValue);
+    // Determine content orientation
+    const contentOrientation =
+        (position === 'left' || position === 'right') ? 'horizontal' :
+            (position === 'top' || position === 'bottom') ? 'vertical' :
+                orientation;
 
     // Merge class names
     const wrapperClassName = classNames(
         className,
         styles.spinbutton,
-        { [styles.top]: (buttonPosition === 'top' || (buttonPosition === 'wrapped' && buttonOrientation === 'vertical')) },
-        { [styles.left]: (buttonPosition === 'left' || (buttonPosition === 'wrapped' && buttonOrientation === 'horizontal')) },
-        { [styles.right]: (buttonPosition === 'right' || (buttonPosition === 'wrapped' && buttonOrientation === 'horizontal')) },
-        { [styles.bottom]: (buttonPosition === 'bottom' || (buttonPosition === 'wrapped' && buttonOrientation === 'vertical')) }
+        styles[contentOrientation],
+        { [styles[position]]: (position !== 'wrapped') }
+    );
+    const buttonsClassName = classNames(
+        styles.buttons,
+        styles[orientation]
     );
 
     // Prevent default scroll behavior on wheel event
     useEffect(() => {
-        inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
+        if (onWheel === undefined) return;
+
+        buttonUpRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
+        buttonDownRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
     });
 
-    function upHandler() {
-        onUp && setValue(onUp(value) ?? value);
-    }
-
-    function downHandler() {
-        onDown && setValue(onDown(value) ?? value);
-    }
-
-    function changeHandler(event) {
-        onChange && setValue(onChange(event.target.value) ?? event.target.value);
-    }
-
-    function wheelHandler(event) {
-        (event.deltaY < 0) ? upHandler() : downHandler();
-    }
-
-    function keyHandler(event) {
-        event.preventDefault();
-
-        switch (event.key) {
-            case 'ArrowUp':
-            case '+':
-                upHandler();
-                break;
-            case 'ArrowDown':
-            case '-':
-                downHandler();
-                break;
-        }
-    }
+    const ButtonUp = (
+        <Button
+            className={styles.up}
+            icon='caret up'
+            onClick={onUp}
+            onWheel={onWheel}
+            ref={buttonUpRef}
+            disabled={disabled}
+        />
+    );
+    const ButtonDown = (
+        <Button
+            className={styles.down}
+            icon='caret down'
+            onClick={onDown}
+            onWheel={onWheel}
+            ref={buttonDownRef}
+            disabled={disabled}
+        />
+    );
 
     return (
-        <Spinner
-            className={wrapperClassName}
-            position={buttonPosition}
-            orientation={buttonOrientation}
-            onUp={upHandler}
-            onDown={downHandler}
-            onWheel={wheelHandler}
-            disabled={disabled}
-        >
-            <Input {...props}
-                value={value}
-                onChange={changeHandler}
-                onKeyDown={props.readOnly && keyHandler}
-                onWheel={wheelHandler}
-                ref={inputRef}
-                disabled={disabled}
-            />
-        </Spinner>
+        <div {...props} className={wrapperClassName}>
+            {(position === 'wrapped') ? (
+                <React.Fragment>
+                    {ButtonUp}
+                    {children}
+                    {ButtonDown}
+                </React.Fragment>
+            ) : (position === 'top' || position === 'left') ? (
+                <React.Fragment>
+                    <div className={buttonsClassName}>
+                        {ButtonUp}
+                        {ButtonDown}
+                    </div>
+                    {children}
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                    {children}
+                    <div className={buttonsClassName}>
+                        {ButtonUp}
+                        {ButtonDown}
+                    </div>
+                </React.Fragment>
+            )}
+        </div>
     );
 }

@@ -1,20 +1,98 @@
-/* Remove rounded corners from first and last child */
-.spinbutton.top > :global(.ui.input) > :first-child,
-.spinbutton.left > :global(.ui.input) > :first-child {
-  border-top-left-radius: 0;
-}
+.spinbutton {
+  /* Use flex layout */
+  &,
+  & > .buttons {
+    display: inline-flex;
 
-.spinbutton.top > :global(.ui.input) > :last-child,
-.spinbutton.right > :global(.ui.input) > :last-child {
-  border-top-right-radius: 0;
-}
+    &.vertical {
+      flex-direction: column;
+    }
 
-.spinbutton.right > :global(.ui.input) > :last-child,
-.spinbutton.bottom > :global(.ui.input) > :last-child {
-  border-bottom-right-radius: 0;
-}
+    &.horizontal {
+      flex-direction: row;
+    }
+  }
 
-.spinbutton.left > :global(.ui.input) > :first-child,
-.spinbutton.bottom > :global(.ui.input) > :first-child {
-  border-bottom-left-radius: 0;
+  /* Fit Buttons into container */
+  & .up,
+  & .down {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Reverse button order on horizontal layout */
+  &.horizontal,
+  & > .buttons.horizontal {
+    & > .up {
+      order: 1;
+    }
+
+    & > .down {
+      order: -1;
+    }
+  }
+
+  /* Wider buttons on vertical layout */
+  &.vertical > .up,
+  &.vertical > .down,
+  & > .buttons.vertical > .up,
+  & > .buttons.vertical > .down {
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
+
+  /* Thinner buttons on horizontal layout */
+  &.horizontal > .up,
+  &.horizontal > .down,
+  & > .buttons.horizontal > .up,
+  & > .buttons.horizontal > .down {
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+
+  /* Remove rounded corners between buttons */
+  /* Remove rounded corners on buttons next to content */
+  &.vertical > .down,
+  &.horizontal > .up,
+  & > .buttons.vertical > .down,
+  & > .buttons.horizontal > .up,
+  &.right > .buttons.vertical > .up,
+  &.right > .buttons.horizontal > .down,
+  &.bottom > .buttons.vertical > .up,
+  &.bottom > .buttons.horizontal > .down {
+    border-top-left-radius: 0;
+  }
+
+  &.vertical > .down,
+  &.horizontal > .down,
+  & > .buttons.vertical > .down,
+  & > .buttons.horizontal > .down,
+  &.left > .buttons.vertical > .up,
+  &.left > .buttons.horizontal > .up,
+  &.bottom > .buttons.vertical > .up,
+  &.bottom > .buttons.horizontal > .up {
+    border-top-right-radius: 0;
+  }
+
+  &.vertical > .up,
+  &.horizontal > .down,
+  & > .buttons.vertical > .up,
+  & > .buttons.horizontal > .down,
+  &.left > .buttons.vertical > .down,
+  &.left > .buttons.horizontal > .up,
+  &.top > .buttons.vertical > .down,
+  &.top > .buttons.horizontal > .up {
+    border-bottom-right-radius: 0;
+  }
+
+  &.vertical > .up,
+  &.horizontal > .up,
+  & > .buttons.vertical > .up,
+  & > .buttons.horizontal > .up,
+  &.right > .buttons.vertical > .down,
+  &.right > .buttons.horizontal > .down,
+  &.top > .buttons.vertical > .down,
+  &.top > .buttons.horizontal > .down {
+    border-bottom-left-radius: 0;
+  }
 }
