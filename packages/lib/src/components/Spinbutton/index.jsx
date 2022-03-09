@@ -6,6 +6,7 @@ import styles from './index.module.css';
 
 
 export default ({
+    value: defaultValue,
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
     onUp,
@@ -14,7 +15,7 @@ export default ({
     disabled,
     ...props
 }) => {
-    const [value, setValue] = useState(props.value);
+    const [value, setValue] = useState(defaultValue);
 
     function upHandler() {
         onUp && setValue(onUp(value) ?? value);
