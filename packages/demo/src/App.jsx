@@ -1,5 +1,5 @@
 import { Tab, Container, Header, Item, Input } from 'semantic-ui-react';
-import { InputSpinner, Spinbutton } from 'semantic-ui-react-spinbutton';
+import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
 
 
 const Content = () => (
@@ -145,30 +145,6 @@ const InputSpinnerVariantExamples = () => (
         </Item>
         <Item>
             <Item.Content>
-                <Item.Header>Number Spinbutton</Item.Header>
-                <Item.Meta>Spinbutton with numbers (editable)</Item.Meta>
-                <Item.Description>
-                    <InputSpinner
-                        value='10'
-                        onUp={value => (Number(value) + 1) || 0}
-                        onDown={value => (Number(value) - 1) || 0}
-                        onChange={value => Math.trunc(value) || 0}
-                    />
-                </Item.Description>
-                <Item.Meta>Spinbutton with numbers (not editable)</Item.Meta>
-                <Item.Description>
-                    <InputSpinner
-                        placeholder='Placeholder'
-                        value='10'
-                        onUp={value => (Number(value) + 1) || 0}
-                        onDown={value => (Number(value) - 1) || 0}
-                        readOnly
-                    />
-                </Item.Description>
-            </Item.Content>
-        </Item>
-        <Item>
-            <Item.Content>
                 <Item.Header>Disabled Spinbutton</Item.Header>
                 <Item.Description>
                     <InputSpinner
@@ -210,9 +186,34 @@ const InputSpinnerVariantExamples = () => (
     </Item.Group>
 );
 
+const NumberInputSpinnerExamples = () => (
+    <Item.Group>
+        <Item>
+            <Item.Content>
+                <Item.Header>NumberInputSpinner</Item.Header>
+                <Item.Meta>Default NumberInputSpinner</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        placeholder='Number'
+                    />
+                </Item.Description>
+                <Item.Meta>Spinbutton with numbers (not editable)</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        placeholder='Placeholder'
+                        value='10'
+                        readOnly
+                    />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+    </Item.Group>
+);
+
 const panes = [
     { menuItem: 'Spinbutton positions', render: () => <SpinbuttonPositionExamples /> },
-    { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> }
+    { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> },
+    { menuItem: 'NumberInputSpinner', render: () => <NumberInputSpinnerExamples /> }
 ];
 
 export default () => (
