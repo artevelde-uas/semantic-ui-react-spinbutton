@@ -40,6 +40,8 @@ export default ({
 
     // Prevent default scroll behavior on wheel event
     useEffect(() => {
+        if (onWheel === undefined) return;
+
         buttonUpRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
         buttonDownRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
     });
