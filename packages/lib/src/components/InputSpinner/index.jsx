@@ -14,6 +14,8 @@ export default ({
     onUp,
     onDown,
     onChange,
+    onWheel,
+    onKeyDown,
     className,
     disabled,
     ...props
@@ -52,11 +54,23 @@ export default ({
     }
 
     function wheelHandler(event) {
+        if (onWheel) {
+            onWheel(event);
+
+            return;
+        }
+
         (event.deltaY < 0) ? upHandler(event) : downHandler(event);
     }
 
     function keyHandler(event) {
         event.preventDefault();
+        
+        if (onKeyDown) {
+            onKeyDown(event);
+
+            return;
+        }
 
         switch (event.key) {
             case 'ArrowUp':
