@@ -21,7 +21,11 @@ export default ({
     const [value, setValue] = useState(defaultValue);
     const wrapperClassName = classNames(
         className,
-        styles.spinbutton
+        styles.spinbutton,
+        { [styles.top]: (buttonPosition === 'top' || (buttonPosition === 'wrapped' && buttonOrientation === 'vertical')) },
+        { [styles.left]: (buttonPosition === 'left' || (buttonPosition === 'wrapped' && buttonOrientation === 'horizontal')) },
+        { [styles.right]: (buttonPosition === 'right' || (buttonPosition === 'wrapped' && buttonOrientation === 'horizontal')) },
+        { [styles.bottom]: (buttonPosition === 'bottom' || (buttonPosition === 'wrapped' && buttonOrientation === 'vertical')) }
     );
 
     function upHandler() {

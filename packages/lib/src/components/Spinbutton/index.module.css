@@ -1,0 +1,20 @@
+/* Remove rounded corners from first and last child */
+.spinbutton.top > :global(.ui.input) > :first-child,
+.spinbutton.left > :global(.ui.input) > :first-child {
+  border-top-left-radius: 0;
+}
+
+.spinbutton.top > :global(.ui.input) > :last-child,
+.spinbutton.right > :global(.ui.input) > :last-child {
+  border-top-right-radius: 0;
+}
+
+.spinbutton.right > :global(.ui.input) > :last-child,
+.spinbutton.bottom > :global(.ui.input) > :last-child {
+  border-bottom-right-radius: 0;
+}
+
+.spinbutton.left > :global(.ui.input) > :first-child,
+.spinbutton.bottom > :global(.ui.input) > :first-child {
+  border-bottom-left-radius: 0;
+}
