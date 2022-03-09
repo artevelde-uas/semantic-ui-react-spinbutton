@@ -190,18 +190,32 @@ const NumberInputSpinnerExamples = () => (
     <Item.Group>
         <Item>
             <Item.Content>
-                <Item.Header>NumberInputSpinner</Item.Header>
-                <Item.Meta>Default NumberInputSpinner</Item.Meta>
+                <Item.Header>Default NumberInputSpinner</Item.Header>
+                <Item.Meta>Default empty NumberInputSpinner</Item.Meta>
                 <Item.Description>
                     <NumberInputSpinner
                         placeholder='Number'
                     />
                 </Item.Description>
-                <Item.Meta>Spinbutton with numbers (not editable)</Item.Meta>
+                <Item.Meta>NumberInputSpinner (readonly)</Item.Meta>
                 <Item.Description>
                     <NumberInputSpinner
                         placeholder='Placeholder'
                         value='10'
+                        readOnly
+                    />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+        <Item>
+            <Item.Content>
+                <Item.Header>NumberInputSpinner options</Item.Header>
+                <Item.Meta>NumberInputSpinner with step size '10'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        placeholder='Placeholder'
+                        value='100'
+                        step='10'
                         readOnly
                     />
                 </Item.Description>

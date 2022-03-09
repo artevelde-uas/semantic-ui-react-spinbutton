@@ -9,6 +9,7 @@ import styles from './index.module.css';
 
 export default ({
     className,
+    step = 1,
     ...props
 }) => {
     // Merge class names
@@ -18,11 +19,11 @@ export default ({
     );
 
     function upHandler(value, event) {
-        return (Number(value) + 1) || 0;
+        return (Number(value) + Number(step)) || 0;
     }
 
     function downHandler(value, event) {
-        return (Number(value) - 1) || 0;
+        return (Number(value) - Number(step)) || 0;
     }
 
     function changeHandler(value, event) {
