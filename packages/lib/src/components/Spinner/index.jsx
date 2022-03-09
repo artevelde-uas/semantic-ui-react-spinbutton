@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from 'semantic-ui-react';
 import classNames from 'classnames';
 
@@ -16,6 +16,9 @@ export default ({
     children,
     ...props
 }) => {
+    const buttonUpRef = useRef();
+    const buttonDownRef = useRef();
+
     const contentOrientation =
         (position === 'left' || position === 'right') ? 'horizontal' :
             (position === 'top' || position === 'bottom') ? 'vertical' :
@@ -32,15 +35,10 @@ export default ({
         styles[orientation]
     );
 
-    function refHandler(node) {
-        // Get a reference to the current native BUTTON element
-        const button = node?.ref.current;
-
-        // Handle the wheel event on the real BUTTON element
-        button && (button.onwheel = event => {
-            event.preventDefault();
-        });
-    }
+    useEffect(() => {
+        buttonUpRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
+        buttonDownRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
+    });
 
     const ButtonUp = (
         <Button
@@ -48,7 +46,7 @@ export default ({
             icon='caret up'
             onClick={onUp}
             onWheel={onWheel}
-            ref={onWheel && refHandler}
+            ref={buttonUpRef}
             disabled={disabled}
         />
     );
@@ -58,7 +56,7 @@ export default ({
             icon='caret down'
             onClick={onDown}
             onWheel={onWheel}
-            ref={onWheel && refHandler}
+            ref={buttonDownRef}
             disabled={disabled}
         />
     );

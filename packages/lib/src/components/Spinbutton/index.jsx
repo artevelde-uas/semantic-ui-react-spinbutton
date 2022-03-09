@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import classNames from 'classnames';
 
@@ -18,7 +18,9 @@ export default ({
     disabled,
     ...props
 }) => {
+    const inputRef = useRef();
     const [value, setValue] = useState(defaultValue);
+
     const wrapperClassName = classNames(
         className,
         styles.spinbutton,
@@ -27,6 +29,10 @@ export default ({
         { [styles.right]: (buttonPosition === 'right' || (buttonPosition === 'wrapped' && buttonOrientation === 'horizontal')) },
         { [styles.bottom]: (buttonPosition === 'bottom' || (buttonPosition === 'wrapped' && buttonOrientation === 'vertical')) }
     );
+
+    useEffect(() => {
+        inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
+    });
 
     function upHandler() {
         onUp && setValue(onUp(value) ?? value);
@@ -59,16 +65,6 @@ export default ({
         }
     }
 
-    function refHandler(node) {
-        // Get a reference to the current native INPUT element
-        const input = node?.inputRef.current;
-
-        // Handle the wheel event on the real INPUT element
-        input && (input.parentElement.onwheel = event => {
-            event.preventDefault();
-        });
-    }
-
     return (
         <Spinner
             className={wrapperClassName}
@@ -84,7 +80,7 @@ export default ({
                 onChange={changeHandler}
                 onKeyDown={props.readOnly && keyHandler}
                 onWheel={wheelHandler}
-                ref={refHandler}
+                ref={inputRef}
                 disabled={disabled}
             />
         </Spinner>
