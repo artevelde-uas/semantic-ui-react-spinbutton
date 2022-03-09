@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Input } from 'semantic-ui-react';
+import classNames from 'classnames';
+
 import Spinner from '../Spinner';
 
 import styles from './index.module.css';
@@ -12,10 +14,15 @@ export default ({
     onUp,
     onDown,
     onChange,
+    className,
     disabled,
     ...props
 }) => {
     const [value, setValue] = useState(defaultValue);
+    const wrapperClassName = classNames(
+        className,
+        styles.spinbutton
+    );
 
     function upHandler() {
         onUp && setValue(onUp(value) ?? value);
@@ -60,6 +67,7 @@ export default ({
 
     return (
         <Spinner
+            className={wrapperClassName}
             position={buttonPosition}
             orientation={buttonOrientation}
             onUp={upHandler}
@@ -68,7 +76,6 @@ export default ({
             disabled={disabled}
         >
             <Input {...props}
-                className={styles.spinbutton}
                 value={value}
                 onChange={changeHandler}
                 onKeyDown={props.readOnly && keyHandler}
