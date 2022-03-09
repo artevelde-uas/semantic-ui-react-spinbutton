@@ -17,15 +17,15 @@ export default ({
         styles.numberinputspinner,
     );
 
-    function upHandler(value) {
+    function upHandler(value, event) {
         return (Number(value) + 1) || 0;
     }
 
-    function downHandler(value) {
+    function downHandler(value, event) {
         return (Number(value) - 1) || 0;
     }
 
-    function changeHandler(value) {
+    function changeHandler(value, event) {
         return Math.trunc(value) || 0;
     }
 

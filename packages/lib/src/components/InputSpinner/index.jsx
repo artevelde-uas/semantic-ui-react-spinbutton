@@ -39,20 +39,20 @@ export default ({
         inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
     });
 
-    function upHandler() {
-        onUp && setValue(onUp(value) ?? value);
+    function upHandler(event) {
+        onUp && setValue(onUp(value, event) ?? value);
     }
 
-    function downHandler() {
-        onDown && setValue(onDown(value) ?? value);
+    function downHandler(event) {
+        onDown && setValue(onDown(value, event) ?? value);
     }
 
     function changeHandler(event) {
-        onChange && setValue(onChange(event.target.value) ?? event.target.value);
+        onChange && setValue(onChange(event.target.value, event) ?? event.target.value);
     }
 
     function wheelHandler(event) {
-        (event.deltaY < 0) ? upHandler() : downHandler();
+        (event.deltaY < 0) ? upHandler(event) : downHandler(event);
     }
 
     function keyHandler(event) {
@@ -61,11 +61,11 @@ export default ({
         switch (event.key) {
             case 'ArrowUp':
             case '+':
-                upHandler();
+                upHandler(event);
                 break;
             case 'ArrowDown':
             case '-':
-                downHandler();
+                downHandler(event);
                 break;
         }
     }
