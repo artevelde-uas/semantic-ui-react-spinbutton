@@ -31,7 +31,6 @@ export default ({
         className,
         styles.spinner,
         styles[contentOrientation],
-        { [styles.wrapped]: (position === 'wrapped' && children) },
         { [styles[position]]: (position !== 'wrapped') }
     );
     const buttonsClassName = classNames(
