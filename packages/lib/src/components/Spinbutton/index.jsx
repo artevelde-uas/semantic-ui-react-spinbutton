@@ -18,9 +18,13 @@ export default ({
     disabled,
     ...props
 }) => {
+    // Get reference to input component
     const inputRef = useRef();
+
+    // Store the input value
     const [value, setValue] = useState(defaultValue);
 
+    // Merge class names
     const wrapperClassName = classNames(
         className,
         styles.spinbutton,
@@ -30,6 +34,7 @@ export default ({
         { [styles.bottom]: (buttonPosition === 'bottom' || (buttonPosition === 'wrapped' && buttonOrientation === 'vertical')) }
     );
 
+    // Prevent default scroll behavior on wheel event
     useEffect(() => {
         inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
     });

@@ -16,13 +16,17 @@ export default ({
     children,
     ...props
 }) => {
+    // Get references to button components
     const buttonUpRef = useRef();
     const buttonDownRef = useRef();
 
+    // Determine content orientation
     const contentOrientation =
         (position === 'left' || position === 'right') ? 'horizontal' :
             (position === 'top' || position === 'bottom') ? 'vertical' :
                 orientation;
+
+    // Merge class names
     const wrapperClassName = classNames(
         className,
         styles.spinner,
@@ -35,6 +39,7 @@ export default ({
         styles[orientation]
     );
 
+    // Prevent default scroll behavior on wheel event
     useEffect(() => {
         buttonUpRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
         buttonDownRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
