@@ -8,7 +8,6 @@ import styles from './index.module.css';
 
 
 export default ({
-    value = '0',
     className,
     ...props
 }) => {
@@ -32,7 +31,6 @@ export default ({
 
     return (
         <InputSpinner {...props}
-            value={value}
             className={className}
             onUp={upHandler}
             onDown={downHandler}

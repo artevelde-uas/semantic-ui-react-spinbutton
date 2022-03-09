@@ -8,7 +8,7 @@ import styles from './index.module.css';
 
 
 export default ({
-    value: defaultValue,
+    value: defaultValue = '',
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
     onUp,
