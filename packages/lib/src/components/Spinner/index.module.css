@@ -51,31 +51,11 @@
   }
 
   /* Remove rounded corners between buttons */
-  &.vertical > .up,
-  & > .buttons.vertical > .up {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &.vertical > .down,
-  & > .buttons.vertical > .down {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  &.horizontal > .up,
-  & > .buttons.horizontal > .up {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  &.horizontal > .down,
-  & > .buttons.horizontal > .down {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
   /* Remove rounded corners on buttons next to content */
+  &.vertical > .down,
+  &.horizontal > .up,
+  & > .buttons.vertical > .down,
+  & > .buttons.horizontal > .up,
   &.right > .buttons.vertical > .up,
   &.right > .buttons.horizontal > .down,
   &.bottom > .buttons.vertical > .up,
@@ -83,6 +63,10 @@
     border-top-left-radius: 0;
   }
 
+  &.vertical > .down,
+  &.horizontal > .down,
+  & > .buttons.vertical > .down,
+  & > .buttons.horizontal > .down,
   &.left > .buttons.vertical > .up,
   &.left > .buttons.horizontal > .up,
   &.bottom > .buttons.vertical > .up,
@@ -90,6 +74,10 @@
     border-top-right-radius: 0;
   }
 
+  &.vertical > .up,
+  &.horizontal > .down,
+  & > .buttons.vertical > .up,
+  & > .buttons.horizontal > .down,
   &.left > .buttons.vertical > .down,
   &.left > .buttons.horizontal > .up,
   &.top > .buttons.vertical > .down,
@@ -97,6 +85,10 @@
     border-bottom-right-radius: 0;
   }
 
+  &.vertical > .up,
+  &.horizontal > .up,
+  & > .buttons.vertical > .up,
+  & > .buttons.horizontal > .up,
   &.right > .buttons.vertical > .down,
   &.right > .buttons.horizontal > .down,
   &.top > .buttons.vertical > .down,
