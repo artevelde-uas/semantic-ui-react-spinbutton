@@ -1,23 +1,20 @@
-:global(.ui.labeled.input).spinbutton > .spinner {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
+/* Remove rounded corners from first and last child */
+.spinbutton.top > :global(.ui.input) > :first-child,
+.spinbutton.left > :global(.ui.input) > :first-child {
+  border-top-left-radius: 0;
+}
 
-  & > :global(.ui.button) {
-    margin: 0;
-    padding: 0 .5em;
-    flex-grow: 1;
+.spinbutton.top > :global(.ui.input) > :last-child,
+.spinbutton.right > :global(.ui.input) > :last-child {
+  border-top-right-radius: 0;
+}
 
-    &.up {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+.spinbutton.right > :global(.ui.input) > :last-child,
+.spinbutton.bottom > :global(.ui.input) > :last-child {
+  border-bottom-right-radius: 0;
+}
 
-    &.down {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-  }
+.spinbutton.left > :global(.ui.input) > :first-child,
+.spinbutton.bottom > :global(.ui.input) > :first-child {
+  border-bottom-left-radius: 0;
 }
