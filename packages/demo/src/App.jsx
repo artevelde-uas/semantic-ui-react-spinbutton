@@ -20,35 +20,35 @@ const SpinnerPositionExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Horizontal spinbuttons</Item.Header>
-                <Item.Meta>Horizontal spinbutton with horizontal spinner on the left</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='left'
-                        buttonOrientation='horizontal'
-                    />
-                </Item.Description>
-                <Item.Meta>Horizontal spinbutton with vertical spinner on the left</Item.Meta>
+                <Item.Meta>Spinbutton with vertical spinner on the right</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='right'
                         buttonOrientation='vertical'
                     />
                 </Item.Description>
-                <Item.Meta>Horizontal spinbutton with horizontal spinner on the right</Item.Meta>
+                <Item.Meta>Spinbutton with horizontal spinner on the right</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='right'
                         buttonOrientation='horizontal'
                     />
                 </Item.Description>
-                <Item.Meta>Horizontal spinbutton with vertical spinner on the right</Item.Meta>
+                <Item.Meta>Spinbutton with vertical spinner on the left</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='left'
                         buttonOrientation='vertical'
                     />
                 </Item.Description>
-                <Item.Meta>Horizontal spinbutton with wrapped spinner</Item.Meta>
+                <Item.Meta>Spinbutton with horizontal spinner on the left</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        buttonPosition='left'
+                        buttonOrientation='horizontal'
+                    />
+                </Item.Description>
+                <Item.Meta>Spinbutton with horizontal wrapped spinner</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='wrapped'
@@ -60,15 +60,7 @@ const SpinnerPositionExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Vertical spinbuttons</Item.Header>
-                <Item.Meta>Vertical spinbutton with horizontal spinner at the top</Item.Meta>
-                <Item.Description>
-                    <Spinbutton
-                        buttonPosition='top'
-                        buttonOrientation='horizontal'
-                        style={{ width: '100px' }}
-                    />
-                </Item.Description>
-                <Item.Meta>Vertical spinbutton with vertical spinner at the top</Item.Meta>
+                <Item.Meta>Spinbutton with vertical spinner at the top</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='top'
@@ -76,15 +68,15 @@ const SpinnerPositionExamples = () => (
                         style={{ width: '100px' }}
                     />
                 </Item.Description>
-                <Item.Meta>Vertical spinbutton with horizontal spinner at the bottom</Item.Meta>
+                <Item.Meta>Spinbutton with horizontal spinner at the top</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        buttonPosition='bottom'
+                        buttonPosition='top'
                         buttonOrientation='horizontal'
                         style={{ width: '100px' }}
                     />
                 </Item.Description>
-                <Item.Meta>Vertical spinbutton with vertical spinner at the bottom</Item.Meta>
+                <Item.Meta>Spinbutton with vertical spinner at the bottom</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='bottom'
@@ -92,7 +84,15 @@ const SpinnerPositionExamples = () => (
                         style={{ width: '100px' }}
                     />
                 </Item.Description>
-                <Item.Meta>Vertical spinbutton with wrapped spinner</Item.Meta>
+                <Item.Meta>Spinbutton with horizontal spinner at the bottom</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        buttonPosition='bottom'
+                        buttonOrientation='horizontal'
+                        style={{ width: '100px' }}
+                    />
+                </Item.Description>
+                <Item.Meta>Spinbutton with vertical wrapped spinner</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         buttonPosition='wrapped'
@@ -155,11 +155,29 @@ const SpinnerVariantExamples = () => (
         </Item>
         <Item>
             <Item.Content>
-                <Item.Header>Spinbutton with icon</Item.Header>
+                <Item.Header>Labeled spinbuttons</Item.Header>
+                <Item.Meta>Spinbutton with icon</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         placeholder='Placeholder'
                         icon='home'
+                    />
+                </Item.Description>
+                <Item.Header></Item.Header>
+                <Item.Meta>Spinbutton with label on the left</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        placeholder='Placeholder'
+                        label='http://'
+                    />
+                </Item.Description>
+                <Item.Header></Item.Header>
+                <Item.Meta>Spinbutton with label on the right</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        placeholder='Placeholder'
+                        label={{ basic: true, content: 'kg' }}
+                        labelPosition='right'
                     />
                 </Item.Description>
             </Item.Content>
