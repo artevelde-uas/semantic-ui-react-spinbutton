@@ -27,6 +27,7 @@ export default ({
 
     // Store the input value
     const [value, setValue] = useState(defaultValue);
+    const [isFocused, setFocused] = useState(false);
 
     // Merge class names
     const wrapperClassName = classNames(
@@ -84,6 +85,14 @@ export default ({
         }
     }
 
+    function focusHandler(event) {
+        setFocused(true);
+    }
+    
+    function blurHandler(event) {
+        setFocused(false);
+    }
+
     return (
         <Spinbutton
             className={wrapperClassName}
@@ -95,10 +104,12 @@ export default ({
             disabled={disabled}
         >
             <Input {...props}
-                value={(props.readOnly && formatter) ? formatter(value) : value}
+                value={(formatter && !isFocused) ? formatter(value) : value}
                 onChange={changeHandler}
                 onKeyDown={props.readOnly ? keyHandler : null}
                 onWheel={wheelHandler}
+                onFocus={focusHandler}
+                onBlur={blurHandler}
                 ref={inputRef}
                 disabled={disabled}
                 fluid
