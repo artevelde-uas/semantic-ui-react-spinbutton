@@ -135,10 +135,17 @@ const InputSpinnerVariantExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Default Spinbutton</Item.Header>
-                <Item.Meta>Default spinbutton with no behavior</Item.Meta>
+                <Item.Meta>Default horizontal spinbutton</Item.Meta>
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'
+                    />
+                </Item.Description>
+                <Item.Meta>Default vertical spinbutton</Item.Meta>
+                <Item.Description>
+                    <InputSpinner
+                        placeholder='Placeholder'
+                        buttonPosition='wrapped'
                     />
                 </Item.Description>
             </Item.Content>
