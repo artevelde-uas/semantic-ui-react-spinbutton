@@ -74,27 +74,27 @@ export default ({
 
     return (
         <div {...props} className={wrapperClassName}>
-            {(position === 'wrapped') ? (
+            {(position === 'top' || position === 'left') ? (
+                <React.Fragment>
+                    <div className={buttonsClassName}>
+                        {ButtonUp}
+                        {ButtonDown}
+                    </div>
+                    {children}
+                </React.Fragment>
+            ) : (position === 'right' || position === 'bottom') ? (
+                <React.Fragment>
+                    {children}
+                    <div className={buttonsClassName}>
+                        {ButtonUp}
+                        {ButtonDown}
+                    </div>
+                </React.Fragment>
+            ) : (
                 <React.Fragment>
                     {ButtonUp}
                     {children}
                     {ButtonDown}
-                </React.Fragment>
-            ) : (position === 'top' || position === 'left') ? (
-                <React.Fragment>
-                    <div className={buttonsClassName}>
-                        {ButtonUp}
-                        {ButtonDown}
-                    </div>
-                    {children}
-                </React.Fragment>
-            ) : (
-                <React.Fragment>
-                    {children}
-                    <div className={buttonsClassName}>
-                        {ButtonUp}
-                        {ButtonDown}
-                    </div>
                 </React.Fragment>
             )}
         </div>
