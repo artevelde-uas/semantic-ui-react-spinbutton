@@ -26,11 +26,11 @@ export default ({
     const numberFormatter = new Intl.NumberFormat().format;
 
     function getStepValue(event) {
-        if (event.shiftKey && !event.ctrlKey && !event.altKey) {
+        if (event.shiftKey && !(event.ctrlKey || event.altKey)) {
             return shiftStep;
-        } else if (event.ctrlKey && !event.shiftKey && !event.altKey) {
+        } else if (event.ctrlKey && !(event.shiftKey || event.altKey)) {
             return ctrlStep;
-        } else if (event.altKey && !event.shiftKey && !event.ctrlKey) {
+        } else if (event.altKey && !(event.shiftKey || event.ctrlKey)) {
             return altStep;
         } else {
             return step;
