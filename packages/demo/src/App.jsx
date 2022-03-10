@@ -246,6 +246,15 @@ const NumberInputSpinnerExamples = () => (
                         readOnly
                     />
                 </Item.Description>
+                <Item.Meta>NumberInputSpinner with alternate step sizes when holding <kbd>Shift</kbd> or <kbd>Ctrl</kbd> keys</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='100'
+                        shiftStep='10'
+                        ctrlStep='0.1'
+                        readOnly
+                    />
+                </Item.Description>
             </Item.Content>
         </Item>
     </Item.Group>
