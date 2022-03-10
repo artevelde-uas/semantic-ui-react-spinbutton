@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import classNames from 'classnames';
 
-import Spinner from '../Spinbutton';
+import Spinbutton from '../Spinbutton';
 
 import styles from './index.module.css';
 
@@ -84,7 +84,7 @@ export default ({
     }
 
     return (
-        <Spinner
+        <Spinbutton
             className={wrapperClassName}
             position={buttonPosition}
             orientation={buttonOrientation}
@@ -102,6 +102,6 @@ export default ({
                 disabled={disabled}
                 fluid
             />
-        </Spinner>
+        </Spinbutton>
     );
 }
