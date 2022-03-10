@@ -30,7 +30,7 @@ const SpinbuttonPositionExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Nested spinbuttons</Item.Header>
-                <Item.Meta>Spinbuttonscan be nested</Item.Meta>
+                <Item.Meta>Spinbuttons can be nested</Item.Meta>
                 <Item.Description>
                     <Spinbutton
                         orientation='horizontal'
