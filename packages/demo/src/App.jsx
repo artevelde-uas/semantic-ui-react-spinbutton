@@ -1,4 +1,4 @@
-import { Tab, Container, Header, Item, Input } from 'semantic-ui-react';
+import { Tab, Container, Header, Item, Button } from 'semantic-ui-react';
 import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
 
 
@@ -24,6 +24,62 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Horizontal spinbuttons</Item.Meta>
                 <Item.Description>
                     <Spinbutton orientation='horizontal' />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+        <Item>
+            <Item.Content>
+                <Item.Header>Nested spinbuttons</Item.Header>
+                <Item.Meta>Spinbuttonscan be nested</Item.Meta>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='horizontal'
+                        upIcon='angle double right'
+                        downIcon='angle double left'
+                    >
+                        <Spinbutton
+                            orientation='horizontal'
+                            upIcon='angle right'
+                            downIcon='angle left'
+                        />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='horizontal'
+                        upIcon='caret right'
+                        downIcon='caret left'
+                        style={{
+                            minHeight: '4em'
+                        }}
+                    >
+                        <Spinbutton
+                            orientation='vertical'
+                        />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='horizontal'
+                        upIcon='caret right'
+                        downIcon='caret left'
+                        style={{
+                            minHeight: '5em'
+                        }}
+                    >
+                        <Spinbutton
+                            orientation='vertical'
+                        >
+                            <Button
+                                icon='circle outline'
+                                size='small'
+                                style={{
+                                    margin: '0',
+                                    borderRadius: '0'
+                                }}
+                            />
+                        </Spinbutton>
+                    </Spinbutton>
                 </Item.Description>
             </Item.Content>
         </Item>
