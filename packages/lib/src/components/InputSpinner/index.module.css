@@ -1,24 +1,44 @@
-/* Remove rounded corners from first and last child */
-.inputspinner.top > :global(.ui.input) > :first-child,
-.inputspinner.left > :global(.ui.input) > :first-child {
-  border-top-left-radius: 0;
-}
+.inputspinner {
+  display: inline-flex;
 
-.inputspinner.top > :global(.ui.input) > :last-child,
-.inputspinner.right > :global(.ui.input) > :last-child,
-.inputspinner.top > :global(.ui.input.icon) > :nth-last-child(2),
-.inputspinner.right > :global(.ui.input.icon) > :nth-last-child(2) {
-  border-top-right-radius: 0;
-}
+  /* Set default width for horizontal layout */
+  &.left,
+  &.right {
+    width: 254px;
+  }
+  /* Set half width for vertical layout */
+  &.top,
+  &.botom {
+    width: 127px;
+  }
 
-.inputspinner.right > :global(.ui.input) > :last-child,
-.inputspinner.bottom > :global(.ui.input) > :last-child,
-.inputspinner.right > :global(.ui.input.icon) > :nth-last-child(2),
-.inputspinner.bottom > :global(.ui.input.icon) > :nth-last-child(2) {
-  border-bottom-right-radius: 0;
-}
+  /* Make INPUT element grow with container */
+  & > :global(.ui.input) {
+    flex-grow: 1;
+  }
 
-.inputspinner.left > :global(.ui.input) > :first-child,
-.inputspinner.bottom > :global(.ui.input) > :first-child {
-  border-bottom-left-radius: 0;
+  /* Remove rounded corners from first and last child */
+  &.top > :global(.ui.input) > :first-child,
+  &.left > :global(.ui.input) > :first-child {
+    border-top-left-radius: 0;
+  }
+
+  &.top > :global(.ui.input) > :last-child,
+  &.right > :global(.ui.input) > :last-child,
+  &.top > :global(.ui.input.icon) > :nth-last-child(2),
+  &.right > :global(.ui.input.icon) > :nth-last-child(2) {
+    border-top-right-radius: 0;
+  }
+
+  &.right > :global(.ui.input) > :last-child,
+  &.bottom > :global(.ui.input) > :last-child,
+  &.right > :global(.ui.input.icon) > :nth-last-child(2),
+  &.bottom > :global(.ui.input.icon) > :nth-last-child(2) {
+    border-bottom-right-radius: 0;
+  }
+
+  &.left > :global(.ui.input) > :first-child,
+  &.bottom > :global(.ui.input) > :first-child {
+    border-bottom-left-radius: 0;
+  }
 }

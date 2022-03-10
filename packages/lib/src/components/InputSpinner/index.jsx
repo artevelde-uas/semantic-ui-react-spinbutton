@@ -100,6 +100,7 @@ export default ({
                 onWheel={wheelHandler}
                 ref={inputRef}
                 disabled={disabled}
+                fluid
             />
         </Spinner>
     );
