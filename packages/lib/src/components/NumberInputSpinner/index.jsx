@@ -50,7 +50,7 @@ export default ({
     }
 
     function changeHandler(value) {
-        return Math.trunc(value) || 0;
+        return props.readOnly ? (Math.trunc(value) || 0) : value;
     }
 
     return (

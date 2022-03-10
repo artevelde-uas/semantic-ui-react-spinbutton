@@ -94,7 +94,7 @@ export default ({
             disabled={disabled}
         >
             <Input {...props}
-                value={formatter ? formatter(value) : value}
+                value={(props.readOnly && formatter) ? formatter(value) : value}
                 onChange={changeHandler}
                 onKeyDown={props.readOnly && keyHandler}
                 onWheel={wheelHandler}
