@@ -157,7 +157,15 @@ const InputSpinnerVariantExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Labeled spinbuttons</Item.Header>
-                <Item.Meta>Spinbutton with icon</Item.Meta>
+                <Item.Meta>Spinbutton with icon on the left</Item.Meta>
+                <Item.Description>
+                    <InputSpinner
+                        placeholder='Placeholder'
+                        icon={{ name: 'home', circular: true }}
+                        iconPosition='left'
+                    />
+                </Item.Description>
+                <Item.Meta>Spinbutton with icon on the right</Item.Meta>
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'

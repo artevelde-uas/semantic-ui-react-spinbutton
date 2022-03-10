@@ -5,12 +5,16 @@
 }
 
 .inputspinner.top > :global(.ui.input) > :last-child,
-.inputspinner.right > :global(.ui.input) > :last-child {
+.inputspinner.right > :global(.ui.input) > :last-child,
+.inputspinner.top > :global(.ui.input.icon) > :nth-last-child(2),
+.inputspinner.right > :global(.ui.input.icon) > :nth-last-child(2) {
   border-top-right-radius: 0;
 }
 
 .inputspinner.right > :global(.ui.input) > :last-child,
-.inputspinner.bottom > :global(.ui.input) > :last-child {
+.inputspinner.bottom > :global(.ui.input) > :last-child,
+.inputspinner.right > :global(.ui.input.icon) > :nth-last-child(2),
+.inputspinner.bottom > :global(.ui.input.icon) > :nth-last-child(2) {
   border-bottom-right-radius: 0;
 }
 
