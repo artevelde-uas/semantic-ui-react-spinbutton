@@ -8,6 +8,8 @@ import styles from './index.module.css';
 export default ({
     position = 'wrapped',
     orientation = 'vertical',
+    upIcon = 'caret up',
+    downIcon = 'caret down',
     onUp,
     onDown,
     onWheel,
@@ -49,7 +51,7 @@ export default ({
     const ButtonUp = (
         <Button
             className={styles.up}
-            icon='caret up'
+            icon={upIcon}
             onClick={onUp}
             onWheel={onWheel}
             ref={buttonUpRef}
@@ -59,7 +61,7 @@ export default ({
     const ButtonDown = (
         <Button
             className={styles.down}
-            icon='caret down'
+            icon={downIcon}
             onClick={onDown}
             onWheel={onWheel}
             ref={buttonDownRef}

@@ -130,6 +130,94 @@ const SpinbuttonPositionExamples = () => (
     </Item.Group>
 );
 
+const SpinbuttonIconExamples = () => (
+    <Item.Group>
+        <Item>
+            <Item.Content>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='horizontal'
+                        upIcon='arrow right'
+                        downIcon='arrow left'
+                        size='large'
+                    />
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='horizontal'
+                        upIcon='search plus'
+                        downIcon='search minus'
+                        size='large'
+                    />
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='vertical'
+                        upIcon='volume up'
+                        downIcon='volume down'
+                        style={{
+                            minHeight: '4em'
+                        }}
+                    />
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        orientation='horizontal'
+                        upIcon='fast forward'
+                        downIcon='fast backward'
+                    >
+                        <Spinbutton
+                            orientation='horizontal'
+                            upIcon='forward'
+                            downIcon='backward'
+                        >
+                            <Button
+                                icon='play'
+                                size='small'
+                                style={{
+                                    margin: '0',
+                                    borderRadius: '0'
+                                }}
+                            />
+                        </Spinbutton>
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        position='right'
+                        orientation='vertical'
+                        upIcon='angle up'
+                        downIcon='angle down'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        position='wrapped'
+                        orientation='horizontal'
+                        upIcon='plus'
+                        downIcon='minus'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+                <Item.Description>
+                    <Spinbutton
+                        position='bottom'
+                        orientation='horizontal'
+                        upIcon='long arrow alternate right'
+                        downIcon='long arrow alternate left left'
+                        size='tiny'
+                    >
+                        <Content />
+                    </Spinbutton>
+                </Item.Description>
+            </Item.Content>
+        </Item>
+    </Item.Group>
+);
+
 const InputSpinnerVariantExamples = () => (
     <Item.Group>
         <Item>
@@ -277,6 +365,7 @@ const NumberInputSpinnerExamples = () => (
 
 const panes = [
     { menuItem: 'Spinbutton positions', render: () => <SpinbuttonPositionExamples /> },
+    { menuItem: 'Spinbutton icons', render: () => <SpinbuttonIconExamples /> },
     { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> },
     { menuItem: 'NumberInputSpinner', render: () => <NumberInputSpinnerExamples /> }
 ];
