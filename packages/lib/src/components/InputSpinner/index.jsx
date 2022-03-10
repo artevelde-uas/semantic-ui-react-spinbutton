@@ -64,8 +64,6 @@ export default ({
     }
 
     function keyHandler(event) {
-        event.preventDefault();
-        
         if (onKeyDown) {
             onKeyDown(event);
 
