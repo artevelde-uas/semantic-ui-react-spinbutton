@@ -238,6 +238,14 @@ const NumberInputSpinnerExamples = () => (
                         readOnly
                     />
                 </Item.Description>
+                <Item.Meta>NumberInputSpinner with step size '0.01'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='100'
+                        step='0.01'
+                        readOnly
+                    />
+                </Item.Description>
             </Item.Content>
         </Item>
     </Item.Group>
