@@ -16,6 +16,7 @@ export default ({
     onChange,
     onWheel,
     onKeyDown,
+    formatter,
     className,
     disabled,
     ...props
@@ -93,7 +94,7 @@ export default ({
             disabled={disabled}
         >
             <Input {...props}
-                value={value}
+                value={formatter ? formatter(value) : value}
                 onChange={changeHandler}
                 onKeyDown={props.readOnly && keyHandler}
                 onWheel={wheelHandler}
