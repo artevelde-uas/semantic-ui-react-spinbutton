@@ -49,7 +49,7 @@ export default ({
         return min ? Math.max(min, newValue) : newValue;
     }
 
-    function changeHandler(value, event) {
+    function changeHandler(value) {
         return Math.trunc(value) || 0;
     }
 
