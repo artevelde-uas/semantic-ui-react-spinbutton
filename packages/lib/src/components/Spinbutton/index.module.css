@@ -95,4 +95,12 @@
   &.top > .buttons.horizontal > .down {
     border-bottom-left-radius: 0;
   }
+
+  /* Remove rounded corners on nested spinbuttons */
+  & > .spinbutton {
+    & .up,
+    & .down {
+      border-radius: 0;
+    }
+  }
 }
