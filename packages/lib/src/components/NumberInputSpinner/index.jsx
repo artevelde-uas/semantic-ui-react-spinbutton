@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Input } from 'semantic-ui-react';
+import React from 'react';
 import classNames from 'classnames';
 
 import InputSpinner from '../InputSpinner';
