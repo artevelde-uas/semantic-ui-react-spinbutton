@@ -16,6 +16,7 @@ export default ({
     className,
     disabled,
     children,
+    size,
     ...props
 }) => {
     // Get references to button components
@@ -51,6 +52,7 @@ export default ({
     const ButtonUp = (
         <Button
             className={styles.up}
+            size={size}
             icon={upIcon}
             onClick={onUp}
             onWheel={onWheel}
@@ -61,6 +63,7 @@ export default ({
     const ButtonDown = (
         <Button
             className={styles.down}
+            size={size}
             icon={downIcon}
             onClick={onDown}
             onWheel={onWheel}
