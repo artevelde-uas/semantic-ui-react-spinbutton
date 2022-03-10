@@ -1,5 +1,5 @@
 import { Tab, Container, Header, Item, Input } from 'semantic-ui-react';
-import { InputSpinner, Spinbutton } from 'semantic-ui-react-spinbutton';
+import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
 
 
 const Content = () => (
@@ -135,34 +135,17 @@ const InputSpinnerVariantExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Default Spinbutton</Item.Header>
-                <Item.Meta>Default spinbutton with no behavior</Item.Meta>
+                <Item.Meta>Default horizontal spinbutton</Item.Meta>
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'
                     />
                 </Item.Description>
-            </Item.Content>
-        </Item>
-        <Item>
-            <Item.Content>
-                <Item.Header>Number Spinbutton</Item.Header>
-                <Item.Meta>Spinbutton with numbers (editable)</Item.Meta>
-                <Item.Description>
-                    <InputSpinner
-                        value='10'
-                        onUp={value => (Number(value) + 1) || 0}
-                        onDown={value => (Number(value) - 1) || 0}
-                        onChange={value => Math.trunc(value) || 0}
-                    />
-                </Item.Description>
-                <Item.Meta>Spinbutton with numbers (not editable)</Item.Meta>
+                <Item.Meta>Default vertical spinbutton</Item.Meta>
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'
-                        value='10'
-                        onUp={value => (Number(value) + 1) || 0}
-                        onDown={value => (Number(value) - 1) || 0}
-                        readOnly
+                        buttonPosition='wrapped'
                     />
                 </Item.Description>
             </Item.Content>
@@ -181,7 +164,15 @@ const InputSpinnerVariantExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Header>Labeled spinbuttons</Item.Header>
-                <Item.Meta>Spinbutton with icon</Item.Meta>
+                <Item.Meta>Spinbutton with icon on the left</Item.Meta>
+                <Item.Description>
+                    <InputSpinner
+                        placeholder='Placeholder'
+                        icon={{ name: 'home', circular: true }}
+                        iconPosition='left'
+                    />
+                </Item.Description>
+                <Item.Meta>Spinbutton with icon on the right</Item.Meta>
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'
@@ -210,9 +201,84 @@ const InputSpinnerVariantExamples = () => (
     </Item.Group>
 );
 
+const NumberInputSpinnerExamples = () => (
+    <Item.Group>
+        <Item>
+            <Item.Content>
+                <Item.Header>Default NumberInputSpinner</Item.Header>
+                <Item.Meta>Default empty NumberInputSpinner</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        placeholder='Number'
+                    />
+                </Item.Description>
+                <Item.Meta>NumberInputSpinner (readonly)</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='10'
+                        readOnly
+                    />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+        <Item>
+            <Item.Content>
+                <Item.Header>NumberInputSpinner <code>min</code>/<code>max</code> options</Item.Header>
+                <Item.Meta>NumberInputSpinner with max value of '10'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='0'
+                        max='10'
+                        readOnly
+                    />
+                </Item.Description>
+                <Item.Meta>NumberInputSpinner with min value of '-10'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='0'
+                        min='-10'
+                        readOnly
+                    />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+        <Item>
+            <Item.Content>
+                <Item.Header>NumberInputSpinner <code>step</code> option</Item.Header>
+                <Item.Meta>NumberInputSpinner with step size '10'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='100'
+                        step='10'
+                        readOnly
+                    />
+                </Item.Description>
+                <Item.Meta>NumberInputSpinner with step size '0.01'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='100'
+                        step='0.01'
+                        readOnly
+                    />
+                </Item.Description>
+                <Item.Meta>NumberInputSpinner with alternate step sizes when holding <kbd>Shift</kbd> or <kbd>Ctrl</kbd> keys</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='100'
+                        shiftStep='10'
+                        ctrlStep='0.1'
+                        readOnly
+                    />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+    </Item.Group>
+);
+
 const panes = [
     { menuItem: 'Spinbutton positions', render: () => <SpinbuttonPositionExamples /> },
-    { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> }
+    { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> },
+    { menuItem: 'NumberInputSpinner', render: () => <NumberInputSpinnerExamples /> }
 ];
 
 export default () => (

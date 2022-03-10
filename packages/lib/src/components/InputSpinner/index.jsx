@@ -8,12 +8,15 @@ import styles from './index.module.css';
 
 
 export default ({
-    value: defaultValue,
+    value: defaultValue = '',
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
     onUp,
     onDown,
     onChange,
+    onWheel,
+    onKeyDown,
+    formatter,
     className,
     disabled,
     ...props
@@ -39,33 +42,43 @@ export default ({
         inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
     });
 
-    function upHandler() {
-        onUp && setValue(onUp(value) ?? value);
+    function upHandler(event) {
+        onUp && setValue(onUp(value, event) ?? value);
     }
 
-    function downHandler() {
-        onDown && setValue(onDown(value) ?? value);
+    function downHandler(event) {
+        onDown && setValue(onDown(value, event) ?? value);
     }
 
     function changeHandler(event) {
-        onChange && setValue(onChange(event.target.value) ?? event.target.value);
+        onChange && setValue(onChange(event.target.value, event) ?? event.target.value);
     }
 
     function wheelHandler(event) {
-        (event.deltaY < 0) ? upHandler() : downHandler();
+        if (onWheel) {
+            onWheel(event);
+
+            return;
+        }
+
+        (event.deltaY < 0) ? upHandler(event) : downHandler(event);
     }
 
     function keyHandler(event) {
-        event.preventDefault();
+        if (onKeyDown) {
+            onKeyDown(event);
+
+            return;
+        }
 
         switch (event.key) {
             case 'ArrowUp':
             case '+':
-                upHandler();
+                upHandler(event);
                 break;
             case 'ArrowDown':
             case '-':
-                downHandler();
+                downHandler(event);
                 break;
         }
     }
@@ -81,12 +94,13 @@ export default ({
             disabled={disabled}
         >
             <Input {...props}
-                value={value}
+                value={(props.readOnly && formatter) ? formatter(value) : value}
                 onChange={changeHandler}
-                onKeyDown={props.readOnly && keyHandler}
+                onKeyDown={props.readOnly ? keyHandler : null}
                 onWheel={wheelHandler}
                 ref={inputRef}
                 disabled={disabled}
+                fluid
             />
         </Spinner>
     );
