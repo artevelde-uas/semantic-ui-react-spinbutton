@@ -208,7 +208,28 @@ const NumberInputSpinnerExamples = () => (
         </Item>
         <Item>
             <Item.Content>
-                <Item.Header>NumberInputSpinner options</Item.Header>
+                <Item.Header>NumberInputSpinner <code>min</code>/<code>max</code> options</Item.Header>
+                <Item.Meta>NumberInputSpinner with max value of '10'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='0'
+                        max='10'
+                        readOnly
+                    />
+                </Item.Description>
+                <Item.Meta>NumberInputSpinner with min value of '-10'</Item.Meta>
+                <Item.Description>
+                    <NumberInputSpinner
+                        value='0'
+                        min='-10'
+                        readOnly
+                    />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+        <Item>
+            <Item.Content>
+                <Item.Header>NumberInputSpinner <code>step</code> option</Item.Header>
                 <Item.Meta>NumberInputSpinner with step size '10'</Item.Meta>
                 <Item.Description>
                     <NumberInputSpinner

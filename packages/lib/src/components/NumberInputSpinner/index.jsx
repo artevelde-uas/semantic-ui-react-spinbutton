@@ -9,6 +9,8 @@ import styles from './index.module.css';
 
 export default ({
     className,
+    min,
+    max,
     step = 1,
     ...props
 }) => {
@@ -19,11 +21,15 @@ export default ({
     );
 
     function upHandler(value, event) {
-        return (Number(value) + Number(step)) || 0;
+        const newValue = (Number(value) + Number(step)) || 0;
+
+        return max ? Math.min(max, newValue) : newValue;
     }
 
     function downHandler(value, event) {
-        return (Number(value) - Number(step)) || 0;
+        const newValue = (Number(value) - Number(step)) || 0;
+        
+        return min ? Math.max(min, newValue) : newValue;
     }
 
     function changeHandler(value, event) {
