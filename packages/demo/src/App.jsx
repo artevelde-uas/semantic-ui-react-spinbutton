@@ -200,7 +200,6 @@ const NumberInputSpinnerExamples = () => (
                 <Item.Meta>NumberInputSpinner (readonly)</Item.Meta>
                 <Item.Description>
                     <NumberInputSpinner
-                        placeholder='Placeholder'
                         value='10'
                         readOnly
                     />
@@ -213,7 +212,6 @@ const NumberInputSpinnerExamples = () => (
                 <Item.Meta>NumberInputSpinner with step size '10'</Item.Meta>
                 <Item.Description>
                     <NumberInputSpinner
-                        placeholder='Placeholder'
                         value='100'
                         step='10'
                         readOnly
