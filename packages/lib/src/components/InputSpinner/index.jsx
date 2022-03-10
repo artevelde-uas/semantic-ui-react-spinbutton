@@ -8,6 +8,7 @@ import styles from './index.module.css';
 
 
 export default ({
+    name,
     value: defaultValue = '',
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
@@ -101,6 +102,11 @@ export default ({
                 ref={inputRef}
                 disabled={disabled}
                 fluid
+            />
+            <input
+                type='hidden'
+                name={name}
+                value={value}
             />
         </Spinbutton>
     );
