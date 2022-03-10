@@ -20,6 +20,9 @@ export default ({
         styles.numberinputspinner,
     );
 
+    // Get a language-sensitive number formatter
+    const numberFormatter = new Intl.NumberFormat().format;
+
     function upHandler(value, event) {
         const newValue = (Number(value) + Number(step)) || 0;
 
@@ -28,7 +31,7 @@ export default ({
 
     function downHandler(value, event) {
         const newValue = (Number(value) - Number(step)) || 0;
-        
+
         return min ? Math.max(min, newValue) : newValue;
     }
 
@@ -42,6 +45,7 @@ export default ({
             onUp={upHandler}
             onDown={downHandler}
             onChange={changeHandler}
+            formatter={numberFormatter}
         />
     );
 }
