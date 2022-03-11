@@ -53,7 +53,7 @@ export default ({
     }
 
     function changeHandler(event) {
-        onChange && setValue(onChange(event.target.value, event) ?? event.target.value);
+        onChange && setValue(onChange(event) ?? event.target.value);
     }
 
     function wheelHandler(event) {
