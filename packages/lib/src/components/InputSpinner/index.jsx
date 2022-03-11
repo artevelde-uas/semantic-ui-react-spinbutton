@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import classNames from 'classnames';
 
+import { useUpdateEffect } from '../../util';
 import Spinbutton from '../Spinbutton';
 
 import styles from './index.module.css';
@@ -24,6 +25,7 @@ export default ({
 }) => {
     // Get reference to input component
     const inputRef = useRef();
+    const hiddenInputRef = useRef();
 
     // Store the input value
     const [value, setValue] = useState(defaultValue);
@@ -43,6 +45,13 @@ export default ({
     useEffect(() => {
         inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
     }, []);
+
+    // Fire input event when value changes
+    useUpdateEffect(() => {
+        const event = new Event('input', { bubbles: true });
+
+        hiddenInputRef.current.dispatchEvent(event);
+    }, [value]);
 
     function upHandler(event) {
         onUp && setValue(onUp(value, event) ?? value);
@@ -88,7 +97,7 @@ export default ({
     function focusHandler(event) {
         setFocused(true);
     }
-    
+
     function blurHandler(event) {
         setFocused(false);
     }
@@ -118,6 +127,8 @@ export default ({
                 type='hidden'
                 name={name}
                 value={value}
+                ref={hiddenInputRef}
+                onInput={onChange}
             />
         </Spinbutton>
     );
