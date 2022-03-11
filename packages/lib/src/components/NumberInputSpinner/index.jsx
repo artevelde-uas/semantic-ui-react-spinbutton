@@ -23,7 +23,9 @@ export default ({
     );
 
     // Get a language-sensitive number formatter
-    const numberFormatter = new Intl.NumberFormat().format;
+    const numberFormatter = new Intl.NumberFormat([], {
+        useGrouping: false
+    }).format;
 
     function getStepValue(event) {
         if (event.shiftKey && !(event.ctrlKey || event.altKey)) {
