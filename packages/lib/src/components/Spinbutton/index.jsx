@@ -47,7 +47,7 @@ export default ({
 
         buttonUpRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
         buttonDownRef.current.ref.current.addEventListener('wheel', event => { event.preventDefault(); });
-    });
+    }, []);
 
     const ButtonUp = (
         <Button

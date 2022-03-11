@@ -42,7 +42,7 @@ export default ({
     // Prevent default scroll behavior on wheel event
     useEffect(() => {
         inputRef.current.inputRef.current.addEventListener('wheel', event => { event.preventDefault(); });
-    });
+    }, []);
 
     function upHandler(event) {
         onUp && setValue(onUp(value, event) ?? value);
