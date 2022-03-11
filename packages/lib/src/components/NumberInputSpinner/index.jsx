@@ -49,16 +49,11 @@ export default ({
         return min ? Math.max(min, newValue) : newValue;
     }
 
-    function changeHandler(value) {
-        return props.readOnly ? (Math.trunc(value) || 0) : value;
-    }
-
     return (
         <InputSpinner {...props}
             className={className}
             onUp={upHandler}
             onDown={downHandler}
-            onChange={changeHandler}
             formatter={numberFormatter}
         />
     );
