@@ -51,6 +51,7 @@ export default ({
 
     const ButtonUp = (
         <Button
+            type='button'
             className={styles.up}
             size={size}
             icon={upIcon}
@@ -62,6 +63,7 @@ export default ({
     );
     const ButtonDown = (
         <Button
+            type='button'
             className={styles.down}
             size={size}
             icon={downIcon}
