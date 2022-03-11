@@ -38,13 +38,13 @@ export default ({
     }
 
     function upHandler(value, event) {
-        const newValue = (Number(value) + Number(getStepValue(event))) || 0;
+        const newValue = (((Number(value) * 1000) + (Number(getStepValue(event)) * 1000)) / 1000) || 0;
 
         return max ? Math.min(max, newValue) : newValue;
     }
 
     function downHandler(value, event) {
-        const newValue = (Number(value) - Number(getStepValue(event))) || 0;
+        const newValue = (((Number(value) * 1000) - (Number(getStepValue(event)) * 1000)) / 1000) || 0;
 
         return min ? Math.max(min, newValue) : newValue;
     }
