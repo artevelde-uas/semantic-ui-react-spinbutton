@@ -15,7 +15,7 @@ export default ({
     buttonOrientation = 'vertical',
     onUp,
     onDown,
-    onChange,
+    onInput,
     onWheel,
     onKeyDown,
     formatter,
@@ -61,8 +61,8 @@ export default ({
         onDown && setValue(onDown(value, event) ?? value);
     }
 
-    function changeHandler(event) {
-        onChange && setValue(onChange(event) ?? event.target.value);
+    function inputHandler(event) {
+        setValue(event.target.value);
     }
 
     function wheelHandler(event) {
@@ -114,7 +114,7 @@ export default ({
         >
             <Input {...props}
                 value={(formatter && !isFocused && (value !== '')) ? formatter(value) : value}
-                onChange={changeHandler}
+                onInput={inputHandler}
                 onKeyDown={props.readOnly ? keyHandler : null}
                 onWheel={wheelHandler}
                 onFocus={focusHandler}
@@ -128,7 +128,7 @@ export default ({
                 name={name}
                 value={value}
                 ref={hiddenInputRef}
-                onInput={onChange}
+                onInput={onInput}
             />
         </Spinbutton>
     );
