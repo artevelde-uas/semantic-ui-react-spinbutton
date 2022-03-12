@@ -15,6 +15,7 @@ export default ({
     buttonOrientation = 'vertical',
     onUp,
     onDown,
+    onChange,
     onInput,
     onWheel,
     onKeyDown,
@@ -63,6 +64,21 @@ export default ({
 
     function inputHandler(event) {
         setValue(event.target.value);
+    }
+
+    function hiddenInputHandler(event) {
+        // Fire the input event
+        onInput && onInput(event);
+        onChange && onChange(event);
+
+        if (onChange) {
+            // Change synthetic event type
+            event._reactName = 'onChange';
+            event.type = 'change';
+            
+            // Fire the change event
+            onChange(event);
+        }
     }
 
     function wheelHandler(event) {
@@ -128,7 +144,7 @@ export default ({
                 name={name}
                 value={value}
                 ref={hiddenInputRef}
-                onInput={onInput}
+                onInput={hiddenInputHandler}
             />
         </Spinbutton>
     );
