@@ -75,7 +75,7 @@ export default ({
             // Change synthetic event type
             event._reactName = 'onChange';
             event.type = 'change';
-            
+
             // Fire the change event
             onChange(event);
         }
@@ -97,6 +97,9 @@ export default ({
 
             return;
         }
+
+        // Don't handle '+' and '-' keys when input is focused
+        if (!props.readOnly && isFocused && ['+', '-'].includes(event.key)) return;
 
         switch (event.key) {
             case 'ArrowUp':
@@ -131,7 +134,7 @@ export default ({
             <Input {...props}
                 value={(formatter && !isFocused && (value !== '')) ? formatter(value) : value}
                 onInput={inputHandler}
-                onKeyDown={props.readOnly ? keyHandler : null}
+                onKeyDown={keyHandler}
                 onWheel={wheelHandler}
                 onFocus={focusHandler}
                 onBlur={blurHandler}
