@@ -54,19 +54,19 @@ export default ({
         hiddenInputRef.current.dispatchEvent(event);
     }, [value]);
 
-    function upHandler(event) {
+    function handleUp(event) {
         onUp && setValue(onUp(value, event) ?? value);
     }
 
-    function downHandler(event) {
+    function handleDown(event) {
         onDown && setValue(onDown(value, event) ?? value);
     }
 
-    function inputHandler(event) {
+    function handleInput(event) {
         setValue(event.target.value);
     }
 
-    function hiddenInputHandler(event) {
+    function handleHiddenInput(event) {
         // Fire the input event
         onInput && onInput(event);
         onChange && onChange(event);
@@ -81,17 +81,17 @@ export default ({
         }
     }
 
-    function wheelHandler(event) {
+    function handleWheel(event) {
         if (onWheel) {
             onWheel(event);
 
             return;
         }
 
-        (event.deltaY < 0) ? upHandler(event) : downHandler(event);
+        (event.deltaY < 0) ? handleUp(event) : handleDown(event);
     }
 
-    function keyHandler(event) {
+    function handleKey(event) {
         if (onKeyDown) {
             onKeyDown(event);
 
@@ -104,16 +104,16 @@ export default ({
         switch (event.key) {
             case 'ArrowUp':
             case '+':
-                upHandler(event);
+                handleUp(event);
                 break;
             case 'ArrowDown':
             case '-':
-                downHandler(event);
+                handleDown(event);
                 break;
         }
     }
 
-    function focusHandler(event) {
+    function handleFocus(event) {
         setFocused(true);
     }
 
@@ -126,17 +126,17 @@ export default ({
             className={wrapperClassName}
             position={buttonPosition}
             orientation={buttonOrientation}
-            onUp={upHandler}
-            onDown={downHandler}
-            onWheel={wheelHandler}
+            onUp={handleUp}
+            onDown={handleDown}
+            onWheel={handleWheel}
             disabled={disabled}
         >
             <Input {...props}
                 value={(formatter && !isFocused && (value !== '')) ? formatter(value) : value}
-                onInput={inputHandler}
-                onKeyDown={keyHandler}
-                onWheel={wheelHandler}
-                onFocus={focusHandler}
+                onInput={handleInput}
+                onKeyDown={handleKey}
+                onWheel={handleWheel}
+                onFocus={handleFocus}
                 onBlur={blurHandler}
                 ref={inputRef}
                 disabled={disabled}
@@ -147,7 +147,7 @@ export default ({
                 name={name}
                 value={value}
                 ref={hiddenInputRef}
-                onInput={hiddenInputHandler}
+                onInput={handleHiddenInput}
             />
         </Spinbutton>
     );

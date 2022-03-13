@@ -40,7 +40,7 @@ export default ({
         }
     }
 
-    function upHandler(value, event) {
+    function handleUp(value, event) {
         // Multiply and divide by 1000 before adding to prevent floating point rounding errors
         const newValue = (((Number(value) * 1000) + (Number(getStepValue(event)) * 1000)) / 1000) || 0;
 
@@ -48,7 +48,7 @@ export default ({
         return max ? Math.min(max, newValue) : newValue;
     }
     
-    function downHandler(value, event) {
+    function handleDown(value, event) {
         // Multiply and divide by 1000 before substracting to prevent floating point rounding errors
         const newValue = (((Number(value) * 1000) - (Number(getStepValue(event)) * 1000)) / 1000) || 0;
         
@@ -59,8 +59,8 @@ export default ({
     return (
         <InputSpinner {...props}
             className={className}
-            onUp={upHandler}
-            onDown={downHandler}
+            onUp={handleUp}
+            onDown={handleDown}
             formatter={numberFormatter}
         />
     );
