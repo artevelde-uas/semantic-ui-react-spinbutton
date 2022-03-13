@@ -313,7 +313,7 @@ const SpinbuttonIconExamples = () => (
     </Item.Group>
 );
 
-const InputSpinnerVariantExamples = () => (
+const InputSpinnerExamples = () => (
     <Item.Group>
         <Item>
             <Item.Content>
@@ -477,7 +477,7 @@ const FormExamples = () => (
 const panes = [
     { menuItem: 'Positions', render: () => <SpinbuttonPositionExamples /> },
     { menuItem: 'Icons', render: () => <SpinbuttonIconExamples /> },
-    { menuItem: 'InputSpinner', render: () => <InputSpinnerVariantExamples /> },
+    { menuItem: 'InputSpinner', render: () => <InputSpinnerExamples /> },
     { menuItem: 'NumberInputSpinner', render: () => <NumberInputSpinnerExamples /> },
     { menuItem: 'Forms', render: () => <FormExamples /> }
 ];
