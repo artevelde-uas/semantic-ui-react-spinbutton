@@ -15,6 +15,8 @@ export default ({
     onWheel,
     className,
     disabled,
+    upDisabled,
+    downDisabled,
     children,
     size,
     ...props
@@ -58,7 +60,7 @@ export default ({
             onClick={onUp}
             onWheel={onWheel}
             ref={buttonUpRef}
-            disabled={disabled}
+            disabled={upDisabled || disabled}
         />
     );
     const ButtonDown = (
@@ -70,7 +72,7 @@ export default ({
             onClick={onDown}
             onWheel={onWheel}
             ref={buttonDownRef}
-            disabled={disabled}
+            disabled={downDisabled || disabled}
         />
     );
 

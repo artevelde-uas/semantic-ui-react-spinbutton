@@ -22,6 +22,8 @@ export default ({
     formatter,
     className,
     disabled,
+    upDisabled,
+    downDisabled,
     ...props
 }) => {
     // Get reference to input component
@@ -130,6 +132,8 @@ export default ({
             onDown={handleDown}
             onWheel={handleWheel}
             disabled={disabled}
+            upDisabled={upDisabled}
+            downDisabled={downDisabled}
         >
             <Input {...props}
                 value={(formatter && !isFocused && (value !== '')) ? formatter(value) : value}

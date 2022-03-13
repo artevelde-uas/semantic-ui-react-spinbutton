@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import InputSpinner from '../InputSpinner';
@@ -16,6 +16,14 @@ export default ({
     altStep = 1,
     ...props
 }) => {
+    const [isMin, setMin] = useState(false);
+    const [isMax, setMax] = useState(false);
+
+    function setMinMax(value) {
+        setMin(min && (value <= min));
+        setMax(max && (value >= max));
+    }
+
     // Merge class names
     className = classNames(
         className,
@@ -44,16 +52,24 @@ export default ({
         // Multiply and divide by 1000 before adding to prevent floating point rounding errors
         const newValue = (((Number(value) * 1000) + (Number(getStepValue(event)) * 1000)) / 1000) || 0;
 
-        // Don't return a valu lower than `min` if specified
-        return max ? Math.min(max, newValue) : newValue;
+        // Only allow values lower than `max` if specified
+        setMinMax(newValue);
+
+        if (!isMax) {
+            return newValue;
+        }
     }
-    
+
     function handleDown(value, event) {
         // Multiply and divide by 1000 before substracting to prevent floating point rounding errors
         const newValue = (((Number(value) * 1000) - (Number(getStepValue(event)) * 1000)) / 1000) || 0;
-        
-        // Don't return a valu higher than `max` if specified
-        return min ? Math.max(min, newValue) : newValue;
+
+        // Only allow values higher than `min` if specified
+        setMinMax(newValue);
+
+        if (!isMin) {
+            return newValue;
+        }
     }
 
     return (
@@ -61,6 +77,8 @@ export default ({
             className={className}
             onUp={handleUp}
             onDown={handleDown}
+            upDisabled={isMax}
+            downDisabled={isMin}
             formatter={numberFormatter}
         />
     );
