@@ -322,8 +322,6 @@ const InputSpinnerExamples = () => (
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'
-                        id='form-test'
-                        name='form-test'
                     />
                 </Item.Description>
                 <Item.Meta>Default vertical spinbutton</Item.Meta>
