@@ -35,7 +35,7 @@ const SubmitForm = () => {
                         placeholder='Number'
                         onChange={handleChange}
                     />
-                    <Button type='submit' content='Submit' />
+                    <Form.Button type='submit' content='Submit' />
                 </Form.Group>
             </Form>
             <br />
