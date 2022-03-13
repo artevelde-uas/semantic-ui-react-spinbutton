@@ -3,12 +3,14 @@ import { Tab, Container, Header, Item, Button, Form, Input } from 'semantic-ui-r
 import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
 
 
-const Content = () => (
-    <div style={{
-        border: '1px solid rgba(34, 36, 38, 0.15)',
-        padding: '0.67857143em 1em',
-        color: 'rgba(34, 36, 38, 0.15)'
-    }}>
+const Content = ({ style, ...props }) => (
+    <div {...props}
+        style={Object.assign({
+            border: '1px solid rgba(34, 36, 38, 0.15)',
+            padding: '0.67857143em 1em',
+            color: 'rgba(34, 36, 38, 0.15)'
+        }, style)}
+    >
         Placeholder
     </div>
 );
