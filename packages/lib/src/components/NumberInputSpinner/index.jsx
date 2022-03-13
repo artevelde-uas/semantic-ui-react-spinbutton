@@ -27,6 +27,7 @@ export default ({
         useGrouping: false
     }).format;
 
+    /** Determine the step value based on the modifier key pressed */
     function getStepValue(event) {
         if (event.shiftKey && !(event.ctrlKey || event.altKey)) {
             return shiftStep;
@@ -40,14 +41,18 @@ export default ({
     }
 
     function upHandler(value, event) {
+        // Multiply and divide by 1000 before adding to prevent floating point rounding errors
         const newValue = (((Number(value) * 1000) + (Number(getStepValue(event)) * 1000)) / 1000) || 0;
 
+        // Don't return a valu lower than `min` if specified
         return max ? Math.min(max, newValue) : newValue;
     }
-
+    
     function downHandler(value, event) {
+        // Multiply and divide by 1000 before substracting to prevent floating point rounding errors
         const newValue = (((Number(value) * 1000) - (Number(getStepValue(event)) * 1000)) / 1000) || 0;
-
+        
+        // Don't return a valu higher than `max` if specified
         return min ? Math.max(min, newValue) : newValue;
     }
 
