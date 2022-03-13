@@ -1,4 +1,5 @@
-import { Tab, Container, Header, Item, Button } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Tab, Container, Header, Item, Button, Form, Input } from 'semantic-ui-react';
 import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
 
 
@@ -11,6 +12,42 @@ const Content = () => (
         Placeholder
     </div>
 );
+
+const SubmitForm = () => {
+    const [value, setValue] = useState('');
+    const [submittedValue, setSubmittedValue] = useState('');
+
+    function handleChange(event) {
+        setValue(event.target.value);
+    }
+
+    function handleSubmit() {
+        setSubmittedValue(value);
+    }
+
+    return (
+        <React.Fragment>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group>
+                    <NumberInputSpinner
+                        placeholder='Number'
+                        onChange={handleChange}
+                    />
+                    <Button type='submit' content='Submit' />
+                </Form.Group>
+            </Form>
+            <br />
+            <strong>onChange:</strong>
+            <pre>
+                {JSON.stringify({ value }, null, 2)}
+            </pre>
+            <strong>onSubmit:</strong>
+            <pre>
+                {JSON.stringify({ submittedValue }, null, 2)}
+            </pre>
+        </React.Fragment>
+    );
+}
 
 const SpinbuttonPositionExamples = () => (
     <Item.Group>
@@ -283,6 +320,8 @@ const InputSpinnerVariantExamples = () => (
                 <Item.Description>
                     <InputSpinner
                         placeholder='Placeholder'
+                        id='form-test'
+                        name='form-test'
                     />
                 </Item.Description>
                 <Item.Meta>Default vertical spinbutton</Item.Meta>
@@ -419,11 +458,26 @@ const NumberInputSpinnerExamples = () => (
     </Item.Group>
 );
 
+const FormExamples = () => (
+    <Item.Group>
+        <Item>
+            <Item.Content>
+                <Item.Header>Capture Form Values</Item.Header>
+                <Item.Meta>Default empty NumberInputSpinner</Item.Meta>
+                <Item.Description>
+                    <SubmitForm />
+                </Item.Description>
+            </Item.Content>
+        </Item>
+    </Item.Group>
+);
+
 const panes = [
-    { menuItem: 'Spinbutton positions', render: () => <SpinbuttonPositionExamples /> },
-    { menuItem: 'Spinbutton icons', render: () => <SpinbuttonIconExamples /> },
-    { menuItem: 'InputSpinner variants', render: () => <InputSpinnerVariantExamples /> },
-    { menuItem: 'NumberInputSpinner', render: () => <NumberInputSpinnerExamples /> }
+    { menuItem: 'Positions', render: () => <SpinbuttonPositionExamples /> },
+    { menuItem: 'Icons', render: () => <SpinbuttonIconExamples /> },
+    { menuItem: 'InputSpinner', render: () => <InputSpinnerVariantExamples /> },
+    { menuItem: 'NumberInputSpinner', render: () => <NumberInputSpinnerExamples /> },
+    { menuItem: 'Forms', render: () => <FormExamples /> }
 ];
 
 export default () => (
