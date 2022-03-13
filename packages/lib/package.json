@@ -6,7 +6,7 @@
     "semantic-ui",
     "spinbutton"
   ],
-  "version": "0.3.1",
+  "version": "1.0.0-alpha",
   "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
   "repository": {
     "type": "git",
@@ -42,5 +42,8 @@
     "postpack": "rimraf 'README.md' 'LICENSE'",
     "build": "rollup --config",
     "watch": "rollup --config --watch"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1"
   }
 }

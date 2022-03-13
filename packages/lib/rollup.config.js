@@ -33,7 +33,9 @@ export default {
             comments: false
         }),
         postcss({
-            modules: true,
+            modules: {
+                generateScopedName: "[local]-[hash:base62:5]",
+            },
             extract: 'index.css',
             plugins: [
                 postcssPresetEnv({
