@@ -11,9 +11,9 @@ export default ({
     min,
     max,
     step = 1,
-    shiftStep = 1,
-    ctrlStep = 1,
-    altStep = 1,
+    shiftStep,
+    ctrlStep,
+    altStep,
     ...props
 }) => {
     const [isMin, setMin] = useState(false);
@@ -37,11 +37,11 @@ export default ({
 
     /** Determine the step value based on the modifier key pressed */
     function getStepValue(event) {
-        if (event.shiftKey && !(event.ctrlKey || event.altKey)) {
+        if (shiftStep && event.shiftKey && !(event.ctrlKey || event.altKey)) {
             return shiftStep;
-        } else if (event.ctrlKey && !(event.shiftKey || event.altKey)) {
+        } else if (ctrlStep && event.ctrlKey && !(event.shiftKey || event.altKey)) {
             return ctrlStep;
-        } else if (event.altKey && !(event.shiftKey || event.ctrlKey)) {
+        } else if (altStep && event.altKey && !(event.shiftKey || event.ctrlKey)) {
             return altStep;
         } else {
             return step;
