@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 import InputSpinner from '../InputSpinner';
@@ -23,6 +23,11 @@ export default ({
         setMin(min && (value <= min));
         setMax(max && (value >= max));
     }
+
+    // Determine min/max on first render
+    useEffect(() => {
+        setMinMax(props.value);
+    }, []);
 
     // Merge class names
     className = classNames(
