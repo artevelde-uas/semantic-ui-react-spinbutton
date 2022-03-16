@@ -18,6 +18,9 @@
   "files": [
     "dist/"
   ],
+  "dependencies": {
+    "classnames": "^2.3.1"
+  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
@@ -42,8 +45,5 @@
     "postpack": "rimraf 'README.md' 'LICENSE'",
     "build": "rollup --config",
     "watch": "rollup --config --watch"
-  },
-  "dependencies": {
-    "classnames": "^2.3.1"
   }
 }
