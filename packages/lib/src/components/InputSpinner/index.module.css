@@ -14,7 +14,7 @@
 
   /* Make INPUT element grow with container */
   & > :global(.ui.input) {
-    flex-grow: 1;
+    width: 100%;
   }
 
   /* Remove rounded corners from first and last child */
