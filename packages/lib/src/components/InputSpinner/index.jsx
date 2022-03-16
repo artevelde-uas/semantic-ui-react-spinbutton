@@ -13,6 +13,8 @@ export default ({
     value: defaultValue = '',
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
+    upIcon,
+    downIcon,
     onUp,
     onDown,
     onChange,
@@ -130,6 +132,8 @@ export default ({
             buttonPosition={buttonPosition}
             buttonOrientation={buttonOrientation}
             buttonSize={props.size}
+            upIcon={upIcon}
+            downIcon={downIcon}
             onUp={handleUp}
             onDown={handleDown}
             onWheel={handleWheel}
