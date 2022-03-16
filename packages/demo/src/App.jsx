@@ -58,11 +58,11 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Header>Spinbutton only</Item.Header>
                 <Item.Meta>Vertical spinbuttons</Item.Meta>
                 <Item.Description>
-                    <Spinbutton orientation='vertical' />
+                    <Spinbutton buttonOrientation='vertical' />
                 </Item.Description>
                 <Item.Meta>Horizontal spinbuttons</Item.Meta>
                 <Item.Description>
-                    <Spinbutton orientation='horizontal' />
+                    <Spinbutton buttonOrientation='horizontal' />
                 </Item.Description>
             </Item.Content>
         </Item>
@@ -72,12 +72,12 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Spinbuttons can be nested</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        orientation='horizontal'
+                        buttonOrientation='horizontal'
                         upIcon='angle double right'
                         downIcon='angle double left'
                     >
                         <Spinbutton
-                            orientation='horizontal'
+                            buttonOrientation='horizontal'
                             upIcon='angle right'
                             downIcon='angle left'
                         />
@@ -85,7 +85,7 @@ const SpinbuttonPositionExamples = () => (
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
-                        orientation='horizontal'
+                        buttonOrientation='horizontal'
                         upIcon='caret right'
                         downIcon='caret left'
                         style={{
@@ -93,13 +93,13 @@ const SpinbuttonPositionExamples = () => (
                         }}
                     >
                         <Spinbutton
-                            orientation='vertical'
+                            buttonOrientation='vertical'
                         />
                     </Spinbutton>
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
-                        orientation='horizontal'
+                        buttonOrientation='horizontal'
                         upIcon='caret right'
                         downIcon='caret left'
                         style={{
@@ -107,7 +107,7 @@ const SpinbuttonPositionExamples = () => (
                         }}
                     >
                         <Spinbutton
-                            orientation='vertical'
+                            buttonOrientation='vertical'
                         >
                             <Button
                                 icon='circle outline'
@@ -128,8 +128,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with vertical spinbutton on the right</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='right'
-                        orientation='vertical'
+                        buttonPosition='right'
+                        buttonOrientation='vertical'
                     >
                         <Content />
                     </Spinbutton>
@@ -137,8 +137,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with horizontal spinbutton on the right</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='right'
-                        orientation='horizontal'
+                        buttonPosition='right'
+                        buttonOrientation='horizontal'
                     >
                         <Content />
                     </Spinbutton>
@@ -146,8 +146,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with vertical spinbutton on the left</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='left'
-                        orientation='vertical'
+                        buttonPosition='left'
+                        buttonOrientation='vertical'
                     >
                         <Content />
                     </Spinbutton>
@@ -155,8 +155,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with horizontal spinbutton on the left</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='left'
-                        orientation='horizontal'
+                        buttonPosition='left'
+                        buttonOrientation='horizontal'
                     >
                         <Content />
                     </Spinbutton>
@@ -164,8 +164,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with horizontal wrapped spinbutton</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='wrapped'
-                        orientation='horizontal'
+                        buttonPosition='wrapped'
+                        buttonOrientation='horizontal'
                     >
                         <Content />
                     </Spinbutton>
@@ -178,8 +178,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with vertical spinbutton at the top</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='top'
-                        orientation='vertical'
+                        buttonPosition='top'
+                        buttonOrientation='vertical'
                     >
                         <Content />
                     </Spinbutton>
@@ -187,8 +187,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with horizontal spinbutton at the top</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='top'
-                        orientation='horizontal'
+                        buttonPosition='top'
+                        buttonOrientation='horizontal'
                     >
                         <Content />
                     </Spinbutton>
@@ -196,8 +196,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with vertical spinbutton at the bottom</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='bottom'
-                        orientation='vertical'
+                        buttonPosition='bottom'
+                        buttonOrientation='vertical'
                     >
                         <Content />
                     </Spinbutton>
@@ -205,8 +205,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with horizontal spinbutton at the bottom</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='bottom'
-                        orientation='horizontal'
+                        buttonPosition='bottom'
+                        buttonOrientation='horizontal'
                     >
                         <Content />
                     </Spinbutton>
@@ -214,8 +214,8 @@ const SpinbuttonPositionExamples = () => (
                 <Item.Meta>Content with vertical wrapped spinbutton</Item.Meta>
                 <Item.Description>
                     <Spinbutton
-                        position='wrapped'
-                        orientation='vertical'
+                        buttonPosition='wrapped'
+                        buttonOrientation='vertical'
                     >
                         <Content />
                     </Spinbutton>
@@ -231,7 +231,7 @@ const SpinbuttonIconExamples = () => (
             <Item.Content>
                 <Item.Description>
                     <Spinbutton
-                        orientation='horizontal'
+                        buttonOrientation='horizontal'
                         upIcon='arrow right'
                         downIcon='arrow left'
                         size='large'
@@ -239,7 +239,7 @@ const SpinbuttonIconExamples = () => (
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
-                        orientation='horizontal'
+                        buttonOrientation='horizontal'
                         upIcon='search plus'
                         downIcon='search minus'
                         size='large'
@@ -247,7 +247,7 @@ const SpinbuttonIconExamples = () => (
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
-                        orientation='vertical'
+                        buttonOrientation='vertical'
                         upIcon='volume up'
                         downIcon='volume down'
                         style={{
@@ -257,12 +257,12 @@ const SpinbuttonIconExamples = () => (
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
-                        orientation='horizontal'
+                        buttonOrientation='horizontal'
                         upIcon='fast forward'
                         downIcon='fast backward'
                     >
                         <Spinbutton
-                            orientation='horizontal'
+                            buttonOrientation='horizontal'
                             upIcon='forward'
                             downIcon='backward'
                         >

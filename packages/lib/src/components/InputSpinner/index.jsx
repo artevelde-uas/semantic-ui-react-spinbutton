@@ -127,8 +127,8 @@ export default ({
     return (
         <Spinbutton
             className={wrapperClassName}
-            position={buttonPosition}
-            orientation={buttonOrientation}
+            buttonPosition={buttonPosition}
+            buttonOrientation={buttonOrientation}
             buttonSize={props.size}
             onUp={handleUp}
             onDown={handleDown}

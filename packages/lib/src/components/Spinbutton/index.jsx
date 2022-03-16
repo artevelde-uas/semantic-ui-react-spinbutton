@@ -6,8 +6,8 @@ import styles from './index.module.css';
 
 
 export default ({
-    position = 'wrapped',
-    orientation = 'vertical',
+    buttonPosition = 'wrapped',
+    buttonOrientation = 'vertical',
     buttonSize,
     upIcon = 'caret up',
     downIcon = 'caret down',
@@ -27,20 +27,20 @@ export default ({
 
     // Determine content orientation
     const contentOrientation =
-        (position === 'left' || position === 'right') ? 'horizontal' :
-            (position === 'top' || position === 'bottom') ? 'vertical' :
-                orientation;
+        (buttonPosition === 'left' || buttonPosition === 'right') ? 'horizontal' :
+            (buttonPosition === 'top' || buttonPosition === 'bottom') ? 'vertical' :
+                buttonOrientation;
 
     // Merge class names
     const wrapperClassName = classNames(
         className,
         styles.spinbutton,
         styles[contentOrientation],
-        { [styles[position]]: (position !== 'wrapped') }
+        { [styles[buttonPosition]]: (buttonPosition !== 'wrapped') }
     );
     const buttonsClassName = classNames(
         styles.buttons,
-        styles[orientation]
+        styles[buttonOrientation]
     );
 
     // Prevent default scroll behavior on wheel event
@@ -78,7 +78,7 @@ export default ({
 
     return (
         <div {...props} className={wrapperClassName}>
-            {(position === 'top' || position === 'left') ? (
+            {(buttonPosition === 'top' || buttonPosition === 'left') ? (
                 <React.Fragment>
                     <div className={buttonsClassName}>
                         {ButtonUp}
@@ -86,7 +86,7 @@ export default ({
                     </div>
                     {children}
                 </React.Fragment>
-            ) : (position === 'right' || position === 'bottom') ? (
+            ) : (buttonPosition === 'right' || buttonPosition === 'bottom') ? (
                 <React.Fragment>
                     {children}
                     <div className={buttonsClassName}>
