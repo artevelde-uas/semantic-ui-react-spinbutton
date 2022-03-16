@@ -5,11 +5,22 @@ import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-
 
 const Content = ({ style, ...props }) => (
     <div {...props}
-        style={Object.assign({
+        style={{
+            width: '100%',
+            height: '100%',
             border: '1px solid rgba(34, 36, 38, 0.15)',
             padding: '0.67857143em 1em',
-            color: 'rgba(34, 36, 38, 0.15)'
-        }, style)}
+            color: 'rgba(34, 36, 38, 0.15)',
+            background: `repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(34, 36, 38, 0.05) 10px,
+                rgba(34, 36, 38, 0.05) 20px
+            )`,
+            backgroundClip: 'padding-box',
+            ...style
+        }}
     >
         Placeholder
     </div>
@@ -230,42 +241,41 @@ const SpinbuttonIconExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Description>
-                    <InputSpinner
+                    <Spinbutton
                         placeholder='Placeholder'
+                        buttonPosition='right'
+                        buttonOrientation='vertical'
                         upIcon='angle up'
                         downIcon='angle down'
-                    />
+                        style={{
+                            width: '16em'
+                        }}
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
                 <Item.Description>
-                    <InputSpinner
+                    <Spinbutton
                         placeholder='Placeholder'
                         buttonPosition='wrapped'
                         buttonOrientation='horizontal'
                         upIcon='plus'
                         downIcon='minus'
-                    />
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
                 <Item.Description>
-                    <InputSpinner
-                        placeholder='Placeholder'
-                        buttonPosition='wrapped'
-                        style={{
-                            width: '8em'
-                        }}
-                    />
-                </Item.Description>
-                <Item.Description>
-                    <InputSpinner
+                    <Spinbutton
                         buttonPosition='bottom'
                         buttonOrientation='horizontal'
                         upIcon='long arrow alternate right'
                         downIcon='long arrow alternate left left'
                         size='big'
                         buttonSize='mini'
-                        style={{
-                            width: '6em'
-                        }}
-                    />
+                    >
+                        <Content />
+                    </Spinbutton>
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
