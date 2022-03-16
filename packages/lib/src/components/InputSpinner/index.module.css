@@ -8,7 +8,7 @@
   }
   /* Set half width for vertical layout */
   &.top,
-  &.botom {
+  &.bottom {
     width: 127px;
   }
 
