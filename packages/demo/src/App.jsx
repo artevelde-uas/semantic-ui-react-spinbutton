@@ -230,11 +230,49 @@ const SpinbuttonIconExamples = () => (
         <Item>
             <Item.Content>
                 <Item.Description>
+                    <InputSpinner
+                        placeholder='Placeholder'
+                        upIcon='angle up'
+                        downIcon='angle down'
+                    />
+                </Item.Description>
+                <Item.Description>
+                    <InputSpinner
+                        placeholder='Placeholder'
+                        buttonPosition='wrapped'
+                        buttonOrientation='horizontal'
+                        upIcon='plus'
+                        downIcon='minus'
+                    />
+                </Item.Description>
+                <Item.Description>
+                    <InputSpinner
+                        placeholder='Placeholder'
+                        buttonPosition='wrapped'
+                        style={{
+                            width: '8em'
+                        }}
+                    />
+                </Item.Description>
+                <Item.Description>
+                    <InputSpinner
+                        buttonPosition='bottom'
+                        buttonOrientation='horizontal'
+                        upIcon='long arrow alternate right'
+                        downIcon='long arrow alternate left left'
+                        size='big'
+                        buttonSize='mini'
+                        style={{
+                            width: '6em'
+                        }}
+                    />
+                </Item.Description>
+                <Item.Description>
                     <Spinbutton
                         buttonOrientation='horizontal'
+                        buttonSize='massive'
                         upIcon='arrow right'
                         downIcon='arrow left'
-                        size='large'
                     />
                 </Item.Description>
                 <Item.Description>
@@ -242,7 +280,6 @@ const SpinbuttonIconExamples = () => (
                         buttonOrientation='horizontal'
                         upIcon='search plus'
                         downIcon='search minus'
-                        size='large'
                     />
                 </Item.Description>
                 <Item.Description>
@@ -279,33 +316,16 @@ const SpinbuttonIconExamples = () => (
                 </Item.Description>
                 <Item.Description>
                     <Spinbutton
-                        position='right'
-                        orientation='vertical'
-                        upIcon='angle up'
-                        downIcon='angle down'
+                        buttonOrientation='horizontal'
+                        upIcon='caret right'
+                        downIcon='caret left'
+                        style={{
+                            minHeight: '4em'
+                        }}
                     >
-                        <Content />
-                    </Spinbutton>
-                </Item.Description>
-                <Item.Description>
-                    <Spinbutton
-                        position='wrapped'
-                        orientation='horizontal'
-                        upIcon='plus'
-                        downIcon='minus'
-                    >
-                        <Content />
-                    </Spinbutton>
-                </Item.Description>
-                <Item.Description>
-                    <Spinbutton
-                        position='bottom'
-                        orientation='horizontal'
-                        upIcon='long arrow alternate right'
-                        downIcon='long arrow alternate left left'
-                        size='tiny'
-                    >
-                        <Content />
+                        <Spinbutton
+                            buttonOrientation='vertical'
+                        />
                     </Spinbutton>
                 </Item.Description>
             </Item.Content>
