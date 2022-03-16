@@ -8,6 +8,7 @@ import styles from './index.module.css';
 export default ({
     position = 'wrapped',
     orientation = 'vertical',
+    buttonSize,
     upIcon = 'caret up',
     downIcon = 'caret down',
     onUp,
@@ -18,7 +19,6 @@ export default ({
     upDisabled,
     downDisabled,
     children,
-    size,
     ...props
 }) => {
     // Get references to button components
@@ -55,7 +55,7 @@ export default ({
         <Button
             type='button'
             className={styles.up}
-            size={size}
+            size={buttonSize}
             icon={upIcon}
             onClick={onUp}
             onWheel={onWheel}
@@ -67,7 +67,7 @@ export default ({
         <Button
             type='button'
             className={styles.down}
-            size={size}
+            size={buttonSize}
             icon={downIcon}
             onClick={onDown}
             onWheel={onWheel}

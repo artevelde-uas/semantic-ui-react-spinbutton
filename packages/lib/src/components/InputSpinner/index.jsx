@@ -128,6 +128,7 @@ export default ({
             className={wrapperClassName}
             position={buttonPosition}
             orientation={buttonOrientation}
+            buttonSize={props.size}
             onUp={handleUp}
             onDown={handleDown}
             onWheel={handleWheel}
