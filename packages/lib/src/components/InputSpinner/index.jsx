@@ -24,6 +24,7 @@ export default ({
     disabled,
     upDisabled,
     downDisabled,
+    style,
     ...props
 }) => {
     // Get reference to input component
@@ -135,6 +136,7 @@ export default ({
             disabled={disabled}
             upDisabled={upDisabled}
             downDisabled={downDisabled}
+            style={style}
         >
             <Input {...props}
                 value={(formatter && !isFocused && (value !== '')) ? formatter(value) : value}
