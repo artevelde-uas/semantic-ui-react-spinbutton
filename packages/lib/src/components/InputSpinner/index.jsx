@@ -13,6 +13,7 @@ export default ({
     value: defaultValue = '',
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
+    buttonSize,
     upIcon,
     downIcon,
     onUp,
@@ -131,7 +132,7 @@ export default ({
             className={wrapperClassName}
             buttonPosition={buttonPosition}
             buttonOrientation={buttonOrientation}
-            buttonSize={props.size}
+            buttonSize={buttonSize || props.size}
             upIcon={upIcon}
             downIcon={downIcon}
             onUp={handleUp}
