@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import classNames from 'classnames';
 
-import { useUpdateEffect } from '../../util';
+import { useUpdateEffect } from 'react-use';
 import Spinbutton from '../Spinbutton';
 
 import styles from './index.module.css';
