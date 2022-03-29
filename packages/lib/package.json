@@ -42,8 +42,9 @@
     "rollup-plugin-postcss": "^4.0.2"
   },
   "scripts": {
-    "prepack": "yarn build && yarn prepack:copy",
-    "prepack:copy": "cpy 'README.md' 'LICENSE' 'packages/lib/' --cwd=../../",
+    "prepack": "yarn build && yarn prepack:copy-license && yarn prepack:copy-readme",
+    "prepack:copy-license": "cpy 'LICENSE' 'packages/lib/' --cwd=../../",
+    "prepack:copy-readme": "yarn workspace docs copy-readme",
     "postpack": "rimraf 'README.md' 'LICENSE'",
     "build": "rollup --config",
     "watch": "rollup --config --watch"

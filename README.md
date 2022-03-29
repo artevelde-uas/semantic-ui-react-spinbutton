@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/github/license/artevelde-uas/semantic-ui-react-spinbutton.svg)](https://spdx.org/licenses/ISC)
 [![downloads](https://img.shields.io/npm/dt/semantic-ui-react-spinbutton.svg)](https://www.npmjs.com/package/semantic-ui-react-spinbutton)
 
-![Semantic UI logo](https://raw.githubusercontent.com/artevelde-uas/semantic-ui-react-spinbutton/master/docs/semantic-ui-logo.png)
+![Semantic UI logo](/docs/semantic-ui-logo.png)
 
 Spinbutton controls for [Semantic UI React](https://react.semantic-ui.com/)
 
@@ -14,7 +14,7 @@ This package provides the following components:
 - **`InputSpinner`**: A generic text input with spinbutton
 - **`NumberInputSpinner`**: A number input with spinbutton
 
-![Example image of numberInput](https://raw.githubusercontent.com/artevelde-uas/semantic-ui-react-spinbutton/master/docs/examples.png)
+![Example image of numberInput](/docs/examples.png)
 
 ## Prerequisites
 
