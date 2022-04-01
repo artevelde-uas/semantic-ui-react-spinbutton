@@ -8,3 +8,4 @@
 node_modules
 .env.local
 packages/lib/dist/
+packages/docs/build/

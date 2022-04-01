@@ -2,12 +2,13 @@
   "name": "docs",
   "private": true,
   "dependencies": {
+    "jsdoc-to-markdown": "^7.1.1",
     "mkabs": "^1.2.4",
-    "mkast": "^1.2.12",
     "mkdoc": "^1.0.49",
     "mkout": "^1.0.39"
   },
   "scripts": {
-    "copy-readme": "node ./scripts/copy-readme.js"
+    "copy-readme": "yarn node ./scripts/copy-readme.js",
+    "build-api": "yarn node ./scripts/build-api.js"
   }
 }
