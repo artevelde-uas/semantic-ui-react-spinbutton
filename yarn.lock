@@ -5400,7 +5400,9 @@ __metadata:
   dependencies:
     jsdoc-to-markdown: ^7.1.1
     mkabs: ^1.2.4
+    mkast: ^1.2.12
     mkdoc: ^1.0.49
+    mklevel: ^1.0.3
     mkout: ^1.0.39
     mkpi: ^1.1.6
     watch: ^1.0.2
@@ -9260,7 +9262,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkast@npm:~1.2.10, mkast@npm:~1.2.2, mkast@npm:~1.2.6":
+"mkast@npm:^1.2.12, mkast@npm:~1.2.10, mkast@npm:~1.2.2, mkast@npm:~1.2.6":
   version: 1.2.12
   resolution: "mkast@npm:1.2.12"
   dependencies:
@@ -9398,7 +9400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mklevel@npm:~1.0.3":
+"mklevel@npm:^1.0.3, mklevel@npm:~1.0.3":
   version: 1.0.3
   resolution: "mklevel@npm:1.0.3"
   dependencies:

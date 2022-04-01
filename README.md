@@ -73,7 +73,7 @@ export default () => (
 );
 ```
 
-## Modules
+### Modules
 
 <dl>
 <dt><a href="#module_InputSpinner">InputSpinner</a></dt>
@@ -94,7 +94,7 @@ export default () => (
 
 <a name="module_InputSpinner"></a>
 
-## InputSpinner
+### InputSpinner
 
 An InputSpinner is used to adjust a value in an adjoining text box
 by either clicking on the up or down button, by scrolling the mouse wheel,
@@ -120,7 +120,7 @@ or by pressing the up or down key, causing the value to change
 
 <a name="module_NumberInputSpinner"></a>
 
-## NumberInputSpinner
+### NumberInputSpinner
 
 An NumberInputSpinner is used to adjust the numeric value in an adjoining text box
 by either clicking on the up or down button, by scrolling the mouse wheel,
@@ -146,14 +146,14 @@ or by pressing the up or down key, causing the value to increase or decrease.
 
 <a name="module_NumberInputSpinner..getStepValue"></a>
 
-### NumberInputSpinner~getStepValue()
+#### NumberInputSpinner~getStepValue()
 
 Determine the step value based on the modifier key pressed
 
 **Kind**: inner method of [<code>NumberInputSpinner</code>](#module_NumberInputSpinner)\
 <a name="module_Spinbutton"></a>
 
-## Spinbutton
+### Spinbutton
 
 A Spinbutton is used to adjust a value by either clicking on the up or down button,
 or by scrolling the mouse wheel, causing the value to change

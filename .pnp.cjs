@@ -8064,7 +8064,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["docs", "workspace:packages/docs"],\
             ["jsdoc-to-markdown", "npm:7.1.1"],\
             ["mkabs", "npm:1.2.4"],\
+            ["mkast", "npm:1.2.12"],\
             ["mkdoc", "npm:1.0.49"],\
+            ["mklevel", "npm:1.0.3"],\
             ["mkout", "npm:1.0.39"],\
             ["mkpi", "npm:1.1.6"],\
             ["watch", "npm:1.0.2"]\
