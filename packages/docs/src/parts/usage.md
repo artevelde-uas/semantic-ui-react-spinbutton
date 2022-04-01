@@ -1,5 +1,9 @@
 ## Usage
 
+### Examples
+
+![Example image of numberInput](/docs/examples.png)
+
 ```jsx
 import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
 import 'semantic-ui-react-spinbutton/dist/index.css';
@@ -32,3 +36,5 @@ export default () => (
     </div>
 );
 ```
+
+<? @source ../../build/api.md ?>
