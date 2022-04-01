@@ -8066,6 +8066,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mkabs", "npm:1.2.4"],\
             ["mkdoc", "npm:1.0.49"],\
             ["mkout", "npm:1.0.39"],\
+            ["mkpi", "npm:1.1.6"],\
             ["watch", "npm:1.0.2"]\
           ],\
           "linkType": "SOFT"\

@@ -5,9 +5,11 @@
     "jsdoc-to-markdown": "^7.1.1",
     "mkabs": "^1.2.4",
     "mkdoc": "^1.0.49",
-    "mkout": "^1.0.39"
+    "mkout": "^1.0.39",
+    "mkpi": "^1.1.6"
   },
   "scripts": {
+    "build-readme": "yarn node ./scripts/build-readme.js",
     "copy-readme": "yarn node ./scripts/copy-readme.js",
     "build-api": "yarn node ./scripts/build-api.js"
   }
