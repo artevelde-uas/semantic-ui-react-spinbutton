@@ -6,6 +6,31 @@ import InputSpinner from '../InputSpinner';
 import styles from './index.module.css';
 
 
+/**
+ * @module NumberInputSpinner
+ * 
+ * @description An NumberInputSpinner is used to adjust the numeric value in an adjoining text box
+ *              by either clicking on the up or down button, by scrolling the mouse wheel,
+ *              or by pressing the up or down key, causing the value to increase or decrease.
+ * 
+ * @param {enum} [buttonPosition=right] - The position of the buttons <br>
+ *        **Enums:** `wrapped` `top` `left` `right` `bottom`
+ * @param {enum} [buttonOrientation=vertical] - The orientation of the buttons <br>
+ *        **Enums:** `horizontal` `vertical`
+ * @param {string} [buttonSize] - The size of the buttons
+ * @param {string} [upIcon=caret up] - The icon on the 'up' button
+ * @param {string} [downIcon=caret down] - The icon on the 'down' button
+ * @param {function} [onUp] - Called on increasing the value
+ * @param {function} [onDown] - Called on decreasing the value
+ * @param {function} [onChange] - Called on changing the value
+ * @param {function} [onWheel] - Called on turning the mouse wheel
+ * @param {function} [onKeyDown] - Called on pressing a key
+ * @param {string} [formatter] - A function to transform the value before displaying
+ * @param {string} [className] - Additional classes
+ * @param {boolean} [disabled] - A Spinbutton can show that it is disabled
+ * @param {boolean} [upDisabled] - An 'up' button can show that it is disabled
+ * @param {boolean} [downDisabled] - A 'down' button can show that it is disabled
+ */
 export default ({
     className,
     min,

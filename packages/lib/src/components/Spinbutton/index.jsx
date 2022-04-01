@@ -5,6 +5,27 @@ import classNames from 'classnames';
 import styles from './index.module.css';
 
 
+/**
+ * @module Spinbutton
+ * 
+ * @description A Spinbutton is used to adjust a value by either clicking on the up or down button,
+ *              or by scrolling the mouse wheel, causing the value to change
+ * 
+ * @param {enum} [buttonPosition=wrapped] - The position of the buttons <br>
+ *        **Enums:** `wrapped` `top` `left` `right` `bottom`
+ * @param {enum} [buttonOrientation=vertical] - The orientation of the buttons <br>
+ *        **Enums:** `horizontal` `vertical`
+ * @param {string} [buttonSize] - The size of the buttons
+ * @param {string} [upIcon=caret up] - The icon on the 'up' button
+ * @param {string} [downIcon=caret down] - The icon on the 'down' button
+ * @param {function} [onUp] - Called on increasing the value
+ * @param {function} [onDown] - Called on decreasing the value
+ * @param {function} [onWheel] - Called on turning the mouse wheel
+ * @param {string} [className] - Additional classes
+ * @param {boolean} [disabled] - A Spinbutton can show that it is disabled
+ * @param {boolean} [upDisabled] - An 'up' button can show that it is disabled
+ * @param {boolean} [downDisabled] - A 'down' button can show that it is disabled
+ */
 export default ({
     buttonPosition = 'wrapped',
     buttonOrientation = 'vertical',
