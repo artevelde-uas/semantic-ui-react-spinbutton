@@ -1,10 +1,6 @@
 ## Prerequisites
 
-```json
-    "react": "*",
-    "react-dom": "*",
-    "semantic-ui-react": "*"
-```
+<? @macro {json} return JSON.stringify(require('../lib/package.json').peerDependencies, null, 2); ?>
 
 ## Installation
 

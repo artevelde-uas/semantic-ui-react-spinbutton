@@ -11,9 +11,11 @@ Spinbutton controls for [Semantic UI React](https://react.semantic-ui.com/)
 ## Prerequisites
 
 ```json
-    "react": "*",
-    "react-dom": "*",
-    "semantic-ui-react": "*"
+{
+  "react": "*",
+  "react-dom": "*",
+  "semantic-ui-react": "*"
+}
 ```
 
 ## Installation
