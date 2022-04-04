@@ -45,7 +45,7 @@
     "build-docs": "yarn workspace docs build",
     "copy-readme": "yarn workspace docs copy-readme",
     "copy-license": "cpy 'LICENSE' 'packages/lib/' --cwd=../../",
-    "prepack": "yarn build &&  yarn copy-readme && yarn copy-license",
+    "prepack": "yarn build && yarn build-docs && yarn copy-readme && yarn copy-license",
     "postpack": "rimraf 'README.md' 'LICENSE'",
     "build": "rollup --config",
     "watch": "rollup --config --watch"
