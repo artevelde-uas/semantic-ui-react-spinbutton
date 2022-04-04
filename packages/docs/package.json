@@ -11,8 +11,8 @@
     "mkpi": "^1.1.6"
   },
   "scripts": {
-    "build-readme": "yarn node ./scripts/build-readme.js",
-    "copy-readme": "yarn node ./scripts/copy-readme.js",
-    "build-api": "yarn node ./scripts/build-api.js"
+    "build:api": "yarn node ./scripts/build-api.js",
+    "build:readme": "yarn node ./scripts/build-readme.js",
+    "copy-readme": "yarn node ./scripts/copy-readme.js"
   }
 }
