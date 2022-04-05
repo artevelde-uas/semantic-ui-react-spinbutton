@@ -5,9 +5,31 @@ import classNames from 'classnames';
 import styles from './index.module.css';
 
 
+/**
+ * @module Spinbutton
+ * 
+ * @description A Spinbutton is used to adjust a value by either clicking on the up or down button,
+ *              or by scrolling the mouse wheel, causing the value to change
+ * 
+ * @param {enum} [buttonPosition=wrapped] - The position of the buttons <br>
+ *        **Enums:** `wrapped` `top` `left` `right` `bottom`
+ * @param {enum} [buttonOrientation=vertical] - The orientation of the buttons <br>
+ *        **Enums:** `horizontal` `vertical`
+ * @param {string} [buttonSize] - The size of the buttons
+ * @param {string} [upIcon=caret up] - The icon on the 'up' button
+ * @param {string} [downIcon=caret down] - The icon on the 'down' button
+ * @param {function} [onUp] - Called on increasing the value
+ * @param {function} [onDown] - Called on decreasing the value
+ * @param {function} [onWheel] - Called on turning the mouse wheel
+ * @param {string} [className] - Additional classes
+ * @param {boolean} [disabled] - A Spinbutton can show that it is disabled
+ * @param {boolean} [upDisabled] - An 'up' button can show that it is disabled
+ * @param {boolean} [downDisabled] - A 'down' button can show that it is disabled
+ */
 export default ({
-    position = 'wrapped',
-    orientation = 'vertical',
+    buttonPosition = 'wrapped',
+    buttonOrientation = 'vertical',
+    buttonSize,
     upIcon = 'caret up',
     downIcon = 'caret down',
     onUp,
@@ -18,7 +40,6 @@ export default ({
     upDisabled,
     downDisabled,
     children,
-    size,
     ...props
 }) => {
     // Get references to button components
@@ -27,20 +48,20 @@ export default ({
 
     // Determine content orientation
     const contentOrientation =
-        (position === 'left' || position === 'right') ? 'horizontal' :
-            (position === 'top' || position === 'bottom') ? 'vertical' :
-                orientation;
+        (buttonPosition === 'left' || buttonPosition === 'right') ? 'horizontal' :
+            (buttonPosition === 'top' || buttonPosition === 'bottom') ? 'vertical' :
+                buttonOrientation;
 
     // Merge class names
     const wrapperClassName = classNames(
         className,
         styles.spinbutton,
         styles[contentOrientation],
-        { [styles[position]]: (position !== 'wrapped') }
+        { [styles[buttonPosition]]: (buttonPosition !== 'wrapped') }
     );
     const buttonsClassName = classNames(
         styles.buttons,
-        styles[orientation]
+        styles[buttonOrientation]
     );
 
     // Prevent default scroll behavior on wheel event
@@ -55,7 +76,7 @@ export default ({
         <Button
             type='button'
             className={styles.up}
-            size={size}
+            size={buttonSize}
             icon={upIcon}
             onClick={onUp}
             onWheel={onWheel}
@@ -67,7 +88,7 @@ export default ({
         <Button
             type='button'
             className={styles.down}
-            size={size}
+            size={buttonSize}
             icon={downIcon}
             onClick={onDown}
             onWheel={onWheel}
@@ -78,7 +99,7 @@ export default ({
 
     return (
         <div {...props} className={wrapperClassName}>
-            {(position === 'top' || position === 'left') ? (
+            {(buttonPosition === 'top' || buttonPosition === 'left') ? (
                 <React.Fragment>
                     <div className={buttonsClassName}>
                         {ButtonUp}
@@ -86,7 +107,7 @@ export default ({
                     </div>
                     {children}
                 </React.Fragment>
-            ) : (position === 'right' || position === 'bottom') ? (
+            ) : (buttonPosition === 'right' || buttonPosition === 'bottom') ? (
                 <React.Fragment>
                     {children}
                     <div className={buttonsClassName}>

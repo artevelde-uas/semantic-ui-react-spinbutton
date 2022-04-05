@@ -2,17 +2,45 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Input } from 'semantic-ui-react';
 import classNames from 'classnames';
 
-import { useUpdateEffect } from '../../util';
+import { useUpdateEffect } from 'react-use';
 import Spinbutton from '../Spinbutton';
 
 import styles from './index.module.css';
 
 
+/**
+ * @module InputSpinner
+ * 
+ * @description An InputSpinner is used to adjust a value in an adjoining text box
+ *              by either clicking on the up or down button, by scrolling the mouse wheel,
+ *              or by pressing the up or down key, causing the value to change
+ * 
+ * @param {enum} [buttonPosition=right] - The position of the buttons <br>
+ *        **Enums:** `wrapped` `top` `left` `right` `bottom`
+ * @param {enum} [buttonOrientation=vertical] - The orientation of the buttons <br>
+ *        **Enums:** `horizontal` `vertical`
+ * @param {string} [buttonSize] - The size of the buttons
+ * @param {string} [upIcon=caret up] - The icon on the 'up' button
+ * @param {string} [downIcon=caret down] - The icon on the 'down' button
+ * @param {function} [onUp] - Called on increasing the value
+ * @param {function} [onDown] - Called on decreasing the value
+ * @param {function} [onChange] - Called on changing the value
+ * @param {function} [onWheel] - Called on turning the mouse wheel
+ * @param {function} [onKeyDown] - Called on pressing a key
+ * @param {string} [formatter] - A function to transform the value before displaying
+ * @param {string} [className] - Additional classes
+ * @param {boolean} [disabled] - A Spinbutton can show that it is disabled
+ * @param {boolean} [upDisabled] - An 'up' button can show that it is disabled
+ * @param {boolean} [downDisabled] - A 'down' button can show that it is disabled
+ */
 export default ({
     name,
     value: defaultValue = '',
     buttonPosition = 'right',
     buttonOrientation = 'vertical',
+    buttonSize,
+    upIcon,
+    downIcon,
     onUp,
     onDown,
     onChange,
@@ -24,6 +52,7 @@ export default ({
     disabled,
     upDisabled,
     downDisabled,
+    style,
     ...props
 }) => {
     // Get reference to input component
@@ -126,14 +155,18 @@ export default ({
     return (
         <Spinbutton
             className={wrapperClassName}
-            position={buttonPosition}
-            orientation={buttonOrientation}
+            buttonPosition={buttonPosition}
+            buttonOrientation={buttonOrientation}
+            buttonSize={buttonSize || props.size}
+            upIcon={upIcon}
+            downIcon={downIcon}
             onUp={handleUp}
             onDown={handleDown}
             onWheel={handleWheel}
             disabled={disabled}
             upDisabled={upDisabled}
             downDisabled={downDisabled}
+            style={style}
         >
             <Input {...props}
                 value={(formatter && !isFocused && (value !== '')) ? formatter(value) : value}
