@@ -7,7 +7,8 @@
     "watch": "watch 'yarn build:readme' ./src",
     "build:api": "yarn node ./scripts/build-api.js",
     "build:readme": "yarn node ./scripts/build-readme.js",
-    "build:readme-lib": "yarn node ./scripts/build-readme-lib.js"
+    "build:readme-lib": "yarn node ./scripts/build-readme-lib.js",
+    "clean": "rimraf ./build/"
   },
   "dependencies": {
     "jsdoc-to-markdown": "^7.1.1",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
     "watch": "^1.0.2"
   }
 }

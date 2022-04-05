@@ -5285,6 +5285,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-scripts: 5.0.0
+    rimraf: ^3.0.2
     semantic-ui-css: "https://github.com/Semantic-Org/Semantic-UI-CSS.git"
     semantic-ui-react: ^2.1.2
     semantic-ui-react-spinbutton: "workspace:^"
@@ -5433,6 +5434,7 @@ __metadata:
     mklevel: ^1.0.3
     mkout: ^1.0.39
     mkpi: ^1.1.6
+    rimraf: ^3.0.2
     watch: ^1.0.2
   languageName: unknown
   linkType: soft

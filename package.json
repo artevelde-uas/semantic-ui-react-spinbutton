@@ -16,7 +16,8 @@
     "start:demo": "yarn workspace demo start",
     "build": "yarn workspace semantic-ui-react-spinbutton build",
     "watch": "yarn workspace semantic-ui-react-spinbutton watch",
-    "test": "yarn workspace demo test"
+    "test": "yarn workspace demo test",
+    "clean": "yarn workspaces foreach run clean"
   },
   "resolutions": {
     "stream-lines": "^1.2.1",
