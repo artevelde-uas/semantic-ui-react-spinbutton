@@ -4,6 +4,7 @@
     badges.md
     intro.md
     install.md
-    demo.md
     usage.md
+    demo.md
+    api.md
 ?>

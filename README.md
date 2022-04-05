@@ -32,15 +32,11 @@ or Yarn:
 yarn add semantic-ui-react-spinbutton
 ```
 
-## Demo
-
-Clone the package and run `yarn start`
-
 ## Usage
 
-### Examples
-
 ![Example image of numberInput](/docs/examples.png)
+
+### Examples
 
 ```jsx
 import { Spinbutton, InputSpinner, NumberInputSpinner } from 'semantic-ui-react-spinbutton';
@@ -74,6 +70,12 @@ export default () => (
     </div>
 );
 ```
+
+## Demo
+
+Clone the package and run `yarn start`
+
+## API
 
 ### Modules
 
