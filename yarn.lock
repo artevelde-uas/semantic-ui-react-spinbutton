@@ -12813,21 +12813,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stream-lines@npm:~1.1.7":
-  version: 1.1.8
-  resolution: "stream-lines@npm:1.1.8"
+"stream-lines@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "stream-lines@npm:1.2.1"
   dependencies:
     through3: ~1.1.1
-  checksum: aaa5295a29399d46323e9bc256304dc0bee427dadebad8ad9b8650fcb386f372cd513e903e2ec4106fb025025e1329169292e9bd6dd7ed648e79ee70f92ea972
-  languageName: node
-  linkType: hard
-
-"stream-lines@npm:~1.2.0":
-  version: 1.2.0
-  resolution: "stream-lines@npm:1.2.0"
-  dependencies:
-    through3: ~1.1.1
-  checksum: b9aeb31c8b6502275a2d47eb48be59de1360123f5f99d0923376aa2572808758f8d398783b390e598dc3fed5e31f69ee11cd6f7c2eeb654f3b9f6e8e880f4b6a
+  checksum: da0ccf88f3913d19fe548b964912b4961ed57f755da14df5874a68673f1104e8e3fc10a9a3b18bdc2098fead2455082ed4a26f28fd653e4899acca9c637ccafb
   languageName: node
   linkType: hard
 
@@ -13394,14 +13385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"through3@npm:~1.1.1, through3@npm:~1.1.5":
-  version: 1.1.6
-  resolution: "through3@npm:1.1.6"
-  checksum: 20be28075f6ec500a8a9e15af5e4a018382b6598635e59f9fc22e24276333de1b591be97b9b1a3cff73a39e3e61cbdb52a0937c3e3b5119e521df911bb0eebf9
-  languageName: node
-  linkType: hard
-
-"through3@npm:~1.1.6":
+"through3@npm:^1.1.7":
   version: 1.1.7
   resolution: "through3@npm:1.1.7"
   checksum: ebfb8a36ea061d2500b599bccb971358a10cc0e32a646f9e567768bd66a51f24921ac7f563f436a3d4a5311b206807c3034ca1c6e293517e058347288c5ab7fe
