@@ -2,7 +2,8 @@
   "name": "docs",
   "private": true,
   "scripts": {
-    "build": "yarn build:api && yarn build:readme && yarn build:readme-lib",
+    "prebuild": "mkdirp ./build/",
+    "build": "yarn prebuild && yarn build:api && yarn build:readme && yarn build:readme-lib",
     "watch": "watch 'yarn build:readme' ./src",
     "build:api": "yarn node ./scripts/build-api.js",
     "build:readme": "yarn node ./scripts/build-readme.js",
@@ -18,6 +19,7 @@
     "mkpi": "^1.1.6"
   },
   "devDependencies": {
+    "mkdirp": "^1.0.4",
     "watch": "^1.0.2"
   }
 }
