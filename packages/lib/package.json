@@ -18,6 +18,15 @@
   "files": [
     "dist/"
   ],
+  "scripts": {
+    "build": "rollup --config",
+    "watch": "rollup --config --watch",
+    "prepack": "yarn build && yarn build-docs && yarn copy-readme && yarn copy-license",
+    "postpack": "rimraf 'README.md' 'LICENSE'",
+    "build-docs": "yarn workspace docs build",
+    "copy-readme": "cpy readme-lib.md ../../lib/ --cwd=../docs/build/ && mve readme-lib.md README.md",
+    "copy-license": "cpy LICENSE packages/lib/ --cwd=../../"
+  },
   "dependencies": {
     "classnames": "^2.3.1",
     "react-use": "^17.3.2"
@@ -41,14 +50,5 @@
     "rollup": "^2.68.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2"
-  },
-  "scripts": {
-    "build-docs": "yarn workspace docs build",
-    "copy-readme": "cpy readme-lib.md ../../lib/ --cwd=../docs/build/ && mve readme-lib.md README.md",
-    "copy-license": "cpy LICENSE packages/lib/ --cwd=../../",
-    "prepack": "yarn build && yarn build-docs && yarn copy-readme && yarn copy-license",
-    "postpack": "rimraf 'README.md' 'LICENSE'",
-    "build": "rollup --config",
-    "watch": "rollup --config --watch"
   }
 }

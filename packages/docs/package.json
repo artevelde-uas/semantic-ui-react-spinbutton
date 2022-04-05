@@ -1,6 +1,13 @@
 {
   "name": "docs",
   "private": true,
+  "scripts": {
+    "build": "yarn build:api && yarn build:readme && yarn build:readme-lib",
+    "watch": "watch 'yarn build:readme' ./src",
+    "build:api": "yarn node ./scripts/build-api.js",
+    "build:readme": "yarn node ./scripts/build-readme.js",
+    "build:readme-lib": "yarn node ./scripts/build-readme-lib.js"
+  },
   "dependencies": {
     "jsdoc-to-markdown": "^7.1.1",
     "mkabs": "^1.2.4",
@@ -12,12 +19,5 @@
   },
   "devDependencies": {
     "watch": "^1.0.2"
-  },
-  "scripts": {
-    "build": "yarn build:api && yarn build:readme && yarn build:readme-lib",
-    "watch": "watch 'yarn build:readme' ./src",
-    "build:api": "yarn node ./scripts/build-api.js",
-    "build:readme": "yarn node ./scripts/build-readme.js",
-    "build:readme-lib": "yarn node ./scripts/build-readme-lib.js"
   }
 }
