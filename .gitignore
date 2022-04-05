@@ -8,4 +8,7 @@
 node_modules
 .env.local
 packages/lib/dist/
+packages/lib/LICENSE
+packages/lib/README.md
+packages/lib/package.tgz
 packages/docs/build/
