@@ -35,6 +35,7 @@
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "cpy-cli": "^4.0.0",
+    "mve": "^0.1.2",
     "postcss-preset-env": "^7.4.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.68.0",
@@ -43,8 +44,8 @@
   },
   "scripts": {
     "build-docs": "yarn workspace docs build",
-    "copy-readme": "yarn workspace docs copy-readme",
-    "copy-license": "cpy 'LICENSE' 'packages/lib/' --cwd=../../",
+    "copy-readme": "cpy readme-lib.md ../../lib/ --cwd=../docs/build/ && mve readme-lib.md README.md",
+    "copy-license": "cpy LICENSE packages/lib/ --cwd=../../",
     "prepack": "yarn build && yarn build-docs && yarn copy-readme && yarn copy-license",
     "postpack": "rimraf 'README.md' 'LICENSE'",
     "build": "rollup --config",
